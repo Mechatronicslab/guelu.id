@@ -90,20 +90,17 @@
                         </div>
                         <div class="card-body--">
                             <div class="table-stats order-table ov-h">
-                                <table class="table ">
-                                    <thead>
+                              <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                  <thead>
                                     <tr>
-                                        <th class="serial">#</th>
                                         <th class="avatar">Avatar</th>
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Status</th>
-                                        <th>Activity</th>
                                     </tr>
-                                    </thead>
-                                    <tbody>
+                                  </thead>
+                                  <tbody>
                                     <tr>
-                                        <td class="serial">1.</td>
                                         <td class="avatar">
                                             <div class="round-img">
                                                 <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/1.jpg" alt=""></a>
@@ -112,12 +109,8 @@
                                         <td> #5469</td>
                                         <td><span class="name">Louis Stanley</span></td>
                                         <td><span class="product">New Member</span></td>
-                                        <td>
-                                            <button type="button" class="badge badge-complete">Konfirmasi</button>
-                                        </td>
                                     </tr>
                                     <tr>
-                                        <td class="serial">2.</td>
                                         <td class="avatar">
                                             <div class="round-img">
                                                 <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/2.jpg" alt=""></a>
@@ -126,12 +119,8 @@
                                         <td> #5468</td>
                                         <td><span class="name">Gregory Dixon</span></td>
                                         <td><span class="product">New Member</span></td>
-                                        <td>
-                                            <button type="button" class="badge badge-complete">Konfirmasi</button>
-                                        </td>
                                     </tr>
                                     <tr>
-                                        <td class="serial">3.</td>
                                         <td class="avatar">
                                             <div class="round-img">
                                                 <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/3.jpg" alt=""></a>
@@ -140,12 +129,8 @@
                                         <td> #5467</td>
                                         <td><span class="name">Catherine Dixon</span></td>
                                         <td><span class="product">New Member</span></td>
-                                        <td>
-                                            <button type="button" class="badge badge-complete">Konfirmasi</button>
-                                        </td>
                                     </tr>
                                     <tr>
-                                        <td class="serial">4.</td>
                                         <td class="avatar">
                                             <div class="round-img">
                                                 <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/4.jpg" alt=""></a>
@@ -154,12 +139,8 @@
                                         <td> #5466</td>
                                         <td><span class="name">Mary Silva</span></td>
                                         <td><span class="product">New Member</span></td>
-                                        <td>
-                                            <button type="button" class="badge badge-complete">Konfirmasi</button>
-                                        </td>
                                     </tr>
                                     <tr class=" pb-0">
-                                        <td class="serial">5.</td>
                                         <td class="avatar pb-0">
                                             <div class="round-img">
                                                 <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/6.jpg" alt=""></a>
@@ -168,12 +149,9 @@
                                         <td> #5465</td>
                                         <td><span class="name">Johnny Stephens</span></td>
                                         <td><span class="product">New Member</span></td>
-                                        <td>
-                                            <button type="button" class="badge badge-complete">Konfirmasi</button>
-                                        </td>
                                     </tr>
-                                    </tbody>
-                                </table>
+                                  </tbody>
+                              </table>
                             </div>
                         </div>
                     </div>

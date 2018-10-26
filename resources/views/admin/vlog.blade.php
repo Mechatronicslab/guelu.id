@@ -13,7 +13,6 @@
                             <h1>POST</h1>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-danger btn-sm post">Tambah post</button>
                 </div>
                 <div class="col-sm-8">
                     <div class="page-header float-right">
@@ -32,69 +31,84 @@
 
     <div class="content">
         <div class="animated fadeIn">
+
             <div class="row">
 
-                <div class="col-md-12">
+                <div class="col-xs-8 col-sm-8">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Video Blog</strong>
+                            <strong>Video Blog</strong>
                         </div>
-                        <div class="card-body">
-                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>Judul</th>
-                                    <th>Author</th>
-                                    <th>Kategori</th>
-                                    <th><i class="fa fa-comments btn-link"></i></th>
-                                    <th>Tanggal</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Lorem Ipsum dolor sit amet</td>
-                                    <td>Administrator</td>
-                                    <td>Berita, Olahraga, Politik</td>
-                                    <td>
-                                        <i class="fa fa-comment btn-link"></i>
-                                        <span class="count">4</span>
-                                    </td>
-                                    <td>29/07/2018</td>
-                                    <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-eye"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Lorem Ipsum dolor sit amet</td>
-                                    <td>Administrator</td>
-                                    <td>Berita, Olahraga, Budaya</td>
-                                    <td>
-                                        <i class="fa fa-comment btn-link"></i>
-                                        <span class="count">4</span>
-                                    </td>
-                                    <td>29/07/2018</td>
-                                    <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-eye"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                        <div class="card-body card-block">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label class=" form-control-label">Judul</label>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Judul konten..." required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class=" form-control-label">URL Embed</label>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="URL embed..." required>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-danger btn-sm post">Tambah postingan baru</button>
+                            </form>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-xs-4 col-sm-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Keterangan</strong>
+                        </div>
+                        <div class="card-body">
+                            <p>Video blog berisikan konten yang diangkat sesuai dengan topik bahasan.</p>
+                            <p>Sertakan URL Embed video dan kategori untuk mempermudah penggunaan.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Kategori</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row form-group">
+                                <div class="col col-md-9">
+                                    <div class="form-check">
+                                        <div class="checkbox">
+                                            <label for="checkbox1" class="form-check-label ">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Kategori#1
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label for="checkbox2" class="form-check-label ">
+                                                <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input">Kategori#2
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label for="checkbox3" class="form-check-label ">
+                                                <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input">Kategori#3
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
             </div>
-        </div>
+
+
+        </div><!-- .animated -->
     </div>
 
 @endsection
+
+<script src="{{URL::to('/')}}/js/tinymce/js/tinymce/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>

@@ -13,7 +13,7 @@
                             <h1>POST</h1>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-danger btn-sm post">Tambah post</button>
+                    <a href="/admin/forum/in_forum" class="btn btn-danger btn-sm post">Tambah post</a>
                 </div>
                 <div class="col-sm-8">
                     <div class="page-header float-right">

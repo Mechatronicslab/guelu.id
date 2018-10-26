@@ -13,7 +13,7 @@
                             <h1>POST</h1>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-danger btn-sm post">Tambah kategori</button>
+                    <a href="/admin/kategori/in_kategori" class="btn btn-danger btn-sm post">Tambah kategori</a>
                 </div>
                 <div class="col-sm-8">
                     <div class="page-header float-right">

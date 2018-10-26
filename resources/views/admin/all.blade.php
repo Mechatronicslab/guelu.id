@@ -13,7 +13,7 @@
                             <h1>POST</h1>
                         </div>
                     </div>
-                    <a href="/admin/news/in_news" class="btn btn-danger btn-sm post">Tambah post</a>
+                    <a href="/admin/post" class="btn btn-danger btn-sm post">Tambah post</a>
                 </div>
                 <div class="col-sm-8">
                     <div class="page-header float-right">
@@ -21,7 +21,6 @@
                             <ol class="breadcrumb text-right">
                                 <li><a href="#">Mainmenu</a></li>
                                 <li><a href="#">Post</a></li>
-                                <li class="active">Berita</li>
                             </ol>
                         </div>
                     </div>
@@ -46,6 +45,7 @@
                                     <th>Judul</th>
                                     <th>Author</th>
                                     <th>Kategori</th>
+                                    <th>Jenis</th>
                                     <th><i class="fa fa-comments btn-link"></i></th>
                                     <th>Tanggal</th>
                                     <th></th>
@@ -53,31 +53,46 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>Lorem Ipsum dolor sit amet</td>
+                                    <td>Lorem Ipsum dolor...</td>
                                     <td>Administrator</td>
                                     <td>Berita, Olahraga, Politik</td>
+                                    <td>Forum</td>
                                     <td>
                                         <i class="fa fa-comment btn-link"></i>
                                         <span class="count">4</span>
                                     </td>
                                     <td>29/07/2018</td>
                                     <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-eye"></i></button>
                                         <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
                                         <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Lorem Ipsum dolor sit amet</td>
+                                    <td>Lorem Ipsum dolor...</td>
                                     <td>Administrator</td>
                                     <td>Berita, Olahraga, Budaya</td>
+                                    <td>Berita</td>
                                     <td>
                                         <i class="fa fa-comment btn-link"></i>
                                         <span class="count">4</span>
                                     </td>
                                     <td>29/07/2018</td>
                                     <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-eye"></i></button>
+                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
+                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Lorem Ipsum dolor...</a></td>
+                                    <td>Administrator</td>
+                                    <td>Berita, Olahraga, Budaya</td>
+                                    <td>Video Blog</td>
+                                    <td>
+                                        <i class="fa fa-comment btn-link"></i>
+                                        <span class="count">4</span>
+                                    </td>
+                                    <td>29/07/2018</td>
+                                    <td>
                                         <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
                                         <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
                                     </td>

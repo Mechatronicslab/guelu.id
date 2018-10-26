@@ -84,9 +84,9 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-rocket"></i>Post</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="/admin/news">Berita</a></li>
+                        <li><i class="fa fa-bars"></i><a href="/admin/all">Semua Post</a></li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="/admin/post">Tambah Post</a></li>
                         <li><i class="fa fa-video-camera"></i><a href="/admin/vlog">Video Blog</a></li>
-                        <li><i class="fa fa-globe"></i><a href="/admin/forum">Forum</a></li>
                         <li><i class="fa fa-tag"></i><a href="/admin/kategori">Kategori</a></li>
                     </ul>
                 </li>

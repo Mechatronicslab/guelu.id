@@ -6,15 +6,19 @@ Route::get('/', function () {
 
 Route::get('/admin', 'AdminController@index');
 
-Route::get('/admin/news', 'AdminController@news');
+Route::get('/admin/kategori', 'AdminController@kategori');
 
 Route::get('/admin/vlog', 'AdminController@vlog');
 
-Route::get('/admin/forum', 'AdminController@forum');
+Route::get('/admin/all', 'AdminController@all');
 
 Route::get('/admin/kategori', 'AdminController@kategori');
 
-Route::get('/admin/news/in_news', 'AdminController@in_news');
+Route::get('/admin/kategori/in_kategori', 'AdminController@in_kategori');
+
+Route::get('/admin/post', 'AdminController@post');
+
+Route::get('/admin/vlog/in_vlog', 'AdminController@in_vlog');
 
 Route::get('/berita', function () {
     return view('berita');
