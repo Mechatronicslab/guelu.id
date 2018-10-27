@@ -52,9 +52,16 @@
                                     <div class="input-group">
                                         <input class="form-control" placeholder="URL embed..." required>
                                     </div>
-                                </div>
-                                <button type="button" class="btn btn-danger btn-sm post">Tambah postingan baru</button>
+                                </div>                                
                             </form>
+                        </div>
+                        <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-paper-plane"></i> Tambah Postingan Baru
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-ban"></i> Reset
+                                </button>
                         </div>
                     </div>
                 </div>

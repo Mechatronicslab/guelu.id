@@ -40,20 +40,33 @@
                         </div>
                         <div class="card-body card-block">
                             <form method="post">
+                              <div class="form-group">
+                                  <label class=" form-control-label">Thumbnails</label>
+                                  <div class="input-group">
+                                      <input type="file" placeholder="Judul konten..." required>
+                                  </div>
+                              </div>
                                 <div class="form-group">
                                     <label class=" form-control-label">Judul</label>
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="Judul konten..." required>
+                                        <input type="text" class="form-control" placeholder="Judul konten..." required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class=" form-control-label">Konten</label>
                                     <div class="input-group">
-                                        <textarea class="form-control"></textarea>
+                                        <textarea class="form-control" name="editor" id="editor"></textarea>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-danger btn-sm post">Tambah postingan baru</button>
                             </form>
+                        </div>
+                        <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-paper-plane"></i> Tambah Postingan Baru
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-ban"></i> Reset
+                                </button>
                         </div>
                     </div>
                 </div>
@@ -124,14 +137,24 @@
 
                 </div>
 
-
             </div>
-
 
         </div><!-- .animated -->
     </div>
 
 @endsection
+<!-- <script src="{{URL::to('/')}}/js/tinymce/js/tinymce/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script> -->
 
-<script src="{{URL::to('/')}}/js/tinymce/js/tinymce/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
+@section('js-editor')
+<script>
+        CKEDITOR.replace( 'editor', {
+          extraPlugins: 'codesnippet',
+          codeSnippet_theme: 'arta',
+          filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+          filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+          filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+          filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        });
+</script>
+@endsection

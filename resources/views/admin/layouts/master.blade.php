@@ -175,6 +175,9 @@
 
 <script src="{{URL::to('/')}}/assets/js/lib/chosen/chosen.jquery.min.js"></script>
 
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+@yield('js-editor')
+
 <script>
     jQuery(document).ready(function() {
         jQuery(".standardSelect").chosen({
