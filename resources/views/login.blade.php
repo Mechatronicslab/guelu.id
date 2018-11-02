@@ -33,7 +33,7 @@
                                                         <input type="password" class="contact_text" placeholder="Password" required="required">
                                                         <button type="submit" class="contact_button">Login</button>
                                                     </form>
-                                                    <a href="/register" type="submit" class="registrasi">Belum memiliki akun ? silahkan daftar sekarang !</a>
+                                                    <a href="{{ route('register') }}" type="submit" class="registrasi">Belum memiliki akun ? silahkan daftar sekarang !</a>
                                                 </div>
                                             </div>
                                         </div>

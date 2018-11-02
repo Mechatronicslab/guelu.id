@@ -13,7 +13,7 @@
                             <h1>POST</h1>
                         </div>
                     </div>
-                    <a href="/admin/kategori/in_kategori" class="btn btn-danger btn-sm post">Tambah kategori</a>
+                    <a href="{{ route('admin.kategori.in_kategori') }}" class="btn btn-danger btn-sm post">Tambah kategori</a>
                 </div>
                 <div class="col-sm-8">
                     <div class="page-header float-right">
@@ -55,12 +55,8 @@
                                     <td>Administrator</td>
                                     <td>29/07/2018</td>
                                     <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-eye"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i>
-                                        </button>
+                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
+                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -68,12 +64,8 @@
                                     <td>Administrator</td>
                                     <td>29/07/2018</td>
                                     <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-eye"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i>
-                                        </button>
+                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
+                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -81,8 +73,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

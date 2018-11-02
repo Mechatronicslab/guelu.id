@@ -44,18 +44,17 @@
                                 <div class="form-group">
                                     <label class=" form-control-label">Judul</label>
                                     <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-tag"></i></div>
-                                        <input class="form-control" placeholder="Judul kategori..." required>
+                                        <input type="text" name="title_" class="form-control" placeholder="Judul kategori..." required>
                                     </div>
                                     <small class="form-text text-muted">ex. Berita, Olahraga, Budaya.</small>
                                 </div>
                                 <div class="form-group">
                                     <label class=" form-control-label">Deskripsi</label>
                                     <div class="input-group">
-                                        <textarea class="form-control"></textarea>
+                                        <textarea name="desc_" placeholder="Teks disini..." class="form-control"></textarea>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-danger btn-sm post">Tambah kategori baru</button>
+                                <button type="submit" class="btn btn-danger btn-sm post">Tambah kategori baru</button>
                             </form>
                         </div>
                     </div>
@@ -71,14 +70,9 @@
                             <p>Silahkan isikan nama kategori sesuai ketentuan yang berlaku, isikan juga deskripsi dari masing masing kategori untuk mempermudah penggunaan.</p>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
-
-
-        </div><!-- .animated -->
+        </div>
     </div>
 
 @endsection

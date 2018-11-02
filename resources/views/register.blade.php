@@ -37,8 +37,7 @@
                                                         <input type="password" class="contact_text" placeholder="Password" required="required">
                                                         <input type="password" class="contact_text" placeholder="Konfirmasi password" required="required">
                                                         <label for="upload-photo" class="file">Foto profil</label>
-                                                        <input type="file" name="photo" id="upload-photo" />
-                                                        {{--<input type="file" class="contact_input contact_input_file" placeholder="Foto profil" required="required">--}}
+                                                        <input type="file" name="photo" id="upload-photo" />                                                        
                                                         <button type="submit" class="contact_button">Daftar Sekarang</button>
                                                     </form>
                                                 </div>

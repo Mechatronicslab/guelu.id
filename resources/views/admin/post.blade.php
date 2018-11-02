@@ -39,25 +39,76 @@
                             <strong>Post</strong>
                         </div>
                         <div class="card-body card-block">
-                            <form method="post">
-                              <div class="form-group">
-                                  <label class=" form-control-label">Thumbnails</label>
-                                  <div class="input-group">
-                                      <input type="file" placeholder="Judul konten..." required>
-                                  </div>
-                              </div>
+                            <form method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label class=" form-control-label">Thumbnails</label>
+                                    <div class="input-group">
+                                        <input type="file" placeholder="Judul konten..." required>
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label class=" form-control-label">Judul</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Judul konten..." required>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label class=" form-control-label">Konten</label>
                                     <div class="input-group">
                                         <textarea class="form-control" name="editor" id="editor"></textarea>
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                <div class="col-xs-6 col-sm-6">
+
+                                <div class="form-group">
+                                      <label class=" form-control-label">Jenis Konten</label>
+                                      <div class="input-group">
+                                          <select data-placeholder="Pilihan konten..." class="standardSelect" tabindex="1">
+                                              <option value="" label="default"></option>
+                                              <option value="0">Berita</option>
+                                              <option value="1">Forum</option>
+                                          </select>
+                                      </div>
+                                </div>
+                                </div>
+
+                                <div class="col-xs-6 col-sm-6">
+                                <div class="form-group">
+                                    <label class=" form-control-label">Kategori</label>
+                                        <div class="input-group">
+                                          <div class="form-check">
+                                              <div class="checkbox">
+                                                  <label for="checkbox1" class="form-check-label ">
+                                                      <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Kategori#1
+                                                  </label>
+                                              </div>
+                                              <div class="checkbox">
+                                                  <label for="checkbox2" class="form-check-label ">
+                                                      <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input">Kategori#2
+                                                  </label>
+                                              </div>
+                                              <div class="checkbox">
+                                                  <label for="checkbox3" class="form-check-label ">
+                                                      <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input">Kategori#3
+                                                  </label>
+                                              </div>
+                                              <div class="line"></div>
+                                              <div class="checkbox">
+                                                  <label for="checkbox4" class="form-check-label ">
+                                                      <a href="{{ route('admin.kategori.in_kategori') }}" name="checkbox4" class="btn btn-link btn-sm plus"><i class="fa fa-plus"></i> Tambah kategori baru</a>
+                                                  </label>
+                                              </div>
+                                          </div>
+                                        </div>
+                                </div>
+                                </div>
+
+                              </div>
+
                             </form>
                         </div>
                         <div class="card-footer">
@@ -82,71 +133,13 @@
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Jenis konten</strong>
-                        </div>
-                        <div class="card-body">
-                            <div class="row form-group">
-                                <div class="col col-md-9">
-                                    <div class="form-check">
-                                        <div class="checkbox">
-                                            <label for="checkbox1" class="form-check-label ">
-                                                <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Berita
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label for="checkbox2" class="form-check-label ">
-                                                <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input">Forum
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Kategori</strong>
-                        </div>
-                        <div class="card-body">
-                            <div class="row form-group">
-                                <div class="col col-md-9">
-                                    <div class="form-check">
-                                        <div class="checkbox">
-                                            <label for="checkbox1" class="form-check-label ">
-                                                <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Kategori#1
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label for="checkbox2" class="form-check-label ">
-                                                <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input">Kategori#2
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label for="checkbox3" class="form-check-label ">
-                                                <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input">Kategori#3
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
 
-        </div><!-- .animated -->
+        </div>
     </div>
 
-@endsection
-<!-- <script src="{{URL::to('/')}}/js/tinymce/js/tinymce/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script> -->
-
-@section('js-editor')
 <script>
         CKEDITOR.replace( 'editor', {
           extraPlugins: 'codesnippet',

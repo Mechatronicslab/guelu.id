@@ -27,16 +27,16 @@
             <div class="row">
                 <div class="col">
                     <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                        <div class="logo"><a href="#"><img class="header_icon" src="{{URL::to('/')}}/images/icon.png" alt=""></a></div>
+                        <div class="logo"><a href="{{ route('index') }}"><img class="header_icon" src="{{URL::to('/')}}/images/icon.png" alt=""></a></div>
                         <nav class="main_nav">
                             <ul>
-                                <li class="active"><a href="/">Beranda</a></li>
-                                <li><a href="/berita">Berita</a></li>
-                                <li><a href="/vlog">Video Blog</a></li>
-                                <li><a href="/forum">Forum</a></li>
-                                <li><a href="/about">Tentang Kami</a></li>
-                                <li><a href="/contact">Kontak</a></li>
-                                <li><a href="/login">Login</a></li>
+                                <li class="active"><a href="{{ route('index') }}">Beranda</a></li>
+                                <li><a href="{{ route('berita') }}">Berita</a></li>
+                                <li><a href="{{ route('vlog') }}">Video Blog</a></li>
+                                <li><a href="{{ route('forum') }}">Forum</a></li>
+                                <li><a href="{{ route('about') }}">Tentang Kami</a></li>
+                                <li><a href="{{ route('contact') }}">Kontak</a></li>
+                                <li><a href="{{ route('login') }}">Login</a></li>
                             </ul>
                         </nav>
                         <div class="search_container ml-auto">
@@ -59,7 +59,7 @@
 
     <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
         <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-        <div class="logo menu_mm"><a href="#"><img class="header_icon" src="{{URL::to('/')}}/images/icon.png" alt=""></a></div>
+        <div class="logo menu_mm"><a href="{{ route('index') }}"><img class="header_icon" src="{{URL::to('/')}}/images/icon.png" alt=""></a></div>
         <div class="search">
             <form action="#">
                 <input type="search" class="header_search_input menu_mm" required="required" placeholder="Type to Search...">
@@ -68,13 +68,13 @@
         </div>
         <nav class="menu_nav">
             <ul class="menu_mm">
-                <li class="menu_mm"><a href="/">Beranda</a></li>
-                <li class="menu_mm"><a href="/berita">Berita</a></li>
-                <li class="menu_mm"><a href="/vlog">Video Blog</a></li>
-                <li class="menu_mm"><a href="/forum">Forum</a></li>
-                <li class="menu_mm"><a href="/about">Tentang Kami</a></li>
-                <li class="menu_mm"><a href="/contact">Kontak</a></li>
-                <li class="menu_mm"><a href="/login">Login</a></li>
+                <li class="menu_mm"><a href="{{ route('index') }}">Beranda</a></li>
+                <li class="menu_mm"><a href="{{ route('berita') }}">Berita</a></li>
+                <li class="menu_mm"><a href="{{ route('vlog') }}">Video Blog</a></li>
+                <li class="menu_mm"><a href="{{ route('forum') }}">Forum</a></li>
+                <li class="menu_mm"><a href="{{ route('about') }}">Tentang Kami</a></li>
+                <li class="menu_mm"><a href="{{ route('contact') }}">Kontak</a></li>
+                <li class="menu_mm"><a href="{{ route('login') }}">Login</a></li>
             </ul>
         </nav>
     </div>
