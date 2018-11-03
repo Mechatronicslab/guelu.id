@@ -7,14 +7,17 @@ Route::get('/forum', 'HomeController@forum')->name('forum');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/post', 'HomeController@post')->name('post');
-Route::get('/register', 'HomeController@register')->name('register');
-Route::get('/login', 'HomeController@login')->name('login');
+Route::get('/register', 'UserController@register')->name('register');
+Route::post('/doRegister', 'UserController@doRegister')->name('doRegister');
+Route::get('/login', 'UserController@login')->name('login');
+Route::post('/doLogin', 'UserController@doLogin')->name('doLogin');
+Route::get('/doLogout', 'UserController@doLogout')->name('doLogout');
 // end home view
 
 // ==============================================================
 
 // start admin
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin', 'UserController@index')->name('admin');
 
 // start post
 Route::get('/admin/all', 'PostController@all')->name('admin.all');

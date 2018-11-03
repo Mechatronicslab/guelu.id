@@ -18,9 +18,9 @@ class CreateAdministratorTable extends Migration
           $table->string('first_name');
           $table->string('last_name');
           $table->string('full_name');
-          $table->string('email_', 191)->unique();
-          $table->string('password_');
-          $table->integer('level_');
+          $table->string('email', 191)->unique();
+          $table->string('password');
+          $table->integer('level');
           $table->rememberToken();
           $table->timestamps();
         });

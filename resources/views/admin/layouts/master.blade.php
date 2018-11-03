@@ -79,8 +79,9 @@
                         <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
 
                         <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
+                        <a class="nav-link" href="#"><i class="fa fa-cog"></i>Status Login : {{Session::get('login')}}</a>
 
-                        <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
+                        <a class="nav-link" href="{{ route('doLogout') }}"><i class="fa fa-power-off"></i>Logout</a>
                     </div>
                 </div>
             </div>
