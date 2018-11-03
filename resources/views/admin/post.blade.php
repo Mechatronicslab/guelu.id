@@ -38,26 +38,27 @@
                         <div class="card-header">
                             <strong>Post</strong>
                         </div>
+                        <form method="post" action="#" enctype="multipart/form-data">
+
                         <div class="card-body card-block">
-                            <form method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label class=" form-control-label">Thumbnails</label>
                                     <div class="input-group">
-                                        <input type="file" placeholder="Judul konten..." required>
+                                        <input name="thumbnails_" type="file" placeholder="Judul konten...">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class=" form-control-label">Judul</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Judul konten..." required>
+                                        <input type="text" name="title_" class="form-control" placeholder="Judul konten..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class=" form-control-label">Konten</label>
                                     <div class="input-group">
-                                        <textarea class="form-control" name="editor" id="editor"></textarea>
+                                        <textarea class="form-control" name="content_" id="content_"></textarea>
                                     </div>
                                 </div>
 
@@ -67,10 +68,10 @@
                                 <div class="form-group">
                                       <label class=" form-control-label">Jenis Konten</label>
                                       <div class="input-group">
-                                          <select data-placeholder="Pilihan konten..." class="standardSelect" tabindex="1">
+                                          <select data-placeholder="Pilihan konten..." name="type_" class="standardSelect" tabindex="1">
                                               <option value="" label="default"></option>
-                                              <option value="0">Berita</option>
-                                              <option value="1">Forum</option>
+                                              <option name="type_" value="1">Berita</option>
+                                              <option name="type_" value="2">Forum</option>
                                           </select>
                                       </div>
                                 </div>
@@ -82,18 +83,8 @@
                                         <div class="input-group">
                                           <div class="form-check">
                                               <div class="checkbox">
-                                                  <label for="checkbox1" class="form-check-label ">
-                                                      <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Kategori#1
-                                                  </label>
-                                              </div>
-                                              <div class="checkbox">
-                                                  <label for="checkbox2" class="form-check-label ">
-                                                      <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input">Kategori#2
-                                                  </label>
-                                              </div>
-                                              <div class="checkbox">
-                                                  <label for="checkbox3" class="form-check-label ">
-                                                      <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input">Kategori#3
+                                                  <label for="categories_id" class="form-check-label ">
+                                                      <input type="checkbox" id="categories_id" name="categories_id" value="kategori" class="form-check-input">Kategori
                                                   </label>
                                               </div>
                                               <div class="line"></div>
@@ -106,10 +97,7 @@
                                         </div>
                                 </div>
                                 </div>
-
                               </div>
-
-                            </form>
                         </div>
                         <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">
@@ -119,6 +107,7 @@
                                     <i class="fa fa-ban"></i> Reset
                                 </button>
                         </div>
+                        </form>
                     </div>
                 </div>
 
@@ -139,9 +128,9 @@
 
         </div>
     </div>
-
+@section('js-editor')
 <script>
-        CKEDITOR.replace( 'editor', {
+        CKEDITOR.replace( 'content_', {
           extraPlugins: 'codesnippet',
           codeSnippet_theme: 'arta',
           filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
@@ -150,4 +139,5 @@
           filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
         });
 </script>
+@endsection
 @endsection

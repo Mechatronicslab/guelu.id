@@ -17,11 +17,16 @@ Route::get('/login', 'HomeController@login')->name('login');
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 // start post
-Route::get('/admin/kategori', 'PostController@kategori')->name('admin.kategori');
-Route::get('/admin/kategori/in_kategori', 'PostController@in_kategori')->name('admin.kategori.in_kategori');
 Route::get('/admin/all', 'PostController@all')->name('admin.all');
 Route::get('/admin/post', 'PostController@post')->name('admin.post');
-Route::get('/admin/vlog', 'PostController@vlog')->name('admin.vlog');
-Route::get('/admin/vlog/in_vlog', 'PostController@in_vlog')->name('admin.in_vlog');
 // end post
+// start vlog
+Route::get('/admin/vlog', 'VlogController@vlog')->name('admin.vlog');
+Route::get('/admin/vlog/in_vlog', 'VlogController@in_vlog')->name('admin.in_vlog');
+// end vlog
+// start kategori
+Route::get('/admin/kategori', 'KategoriController@kategori')->name('admin.kategori');
+Route::get('/admin/kategori/in_kategori', 'KategoriController@in_kategori')->name('admin.kategori.in_kategori');
+Route::post('/admin/kategori', 'KategoriController@InsertKategori')->name('admin.InsertKategori');
+// end kategori
 // end admin

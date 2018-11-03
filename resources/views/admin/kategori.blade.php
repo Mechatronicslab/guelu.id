@@ -44,30 +44,23 @@
                                 <thead>
                                 <tr>
                                     <th>Judul</th>
-                                    <th>Author</th>
+                                    <th>Slug</th>
                                     <th>Tanggal</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Lorem Ipsum dolor sit amet</td>
-                                    <td>Administrator</td>
-                                    <td>29/07/2018</td>
-                                    <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Lorem Ipsum dolor sit amet</td>
-                                    <td>Administrator</td>
-                                    <td>29/07/2018</td>
-                                    <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                @foreach ($kategori_list as $kategori_)
+                                    <tr>
+                                        <td>{{ $kategori_->title_ }}</td>
+                                        <td>{{ $kategori_->slug_ }}</td>
+                                        <td>{{ $kategori_->created_at->toDayDateTimeString() }}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
+                                            <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

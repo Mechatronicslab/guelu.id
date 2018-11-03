@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Post;
+use Request;
+use App\model\Post;
+use App\model\Categories;
 
 class PostController extends Controller
 {
@@ -13,26 +14,11 @@ class PostController extends Controller
     }
 
     public function post(){
-        return view('admin.post');
+        $categories = Categories::all();
+        return view('admin.post', compact('categories'));
     }
 
-    public function vlog(){
-        return view('admin.vlog');
-    }
-
-    public function in_vlog(){
-        return view('admin.vlog.in_vlog');
-    }
-
-    public function kategori(){
-        return view('admin.kategori');
-    }
-
-    public function in_kategori(){
-        return view('admin.kategori.in_kategori');
-    }
-
-    public function store(){
+    public function store_post(){
 
     }
 }

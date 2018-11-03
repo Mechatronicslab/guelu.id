@@ -40,11 +40,19 @@
                             <strong>Kategori</strong>
                         </div>
                         <div class="card-body card-block">
-                            <form method="post">
+                            <form method="post" enctype="multipart/form-data" action="{{ route('admin.InsertKategori') }}">
+                              {{ csrf_field() }}
                                 <div class="form-group">
                                     <label class=" form-control-label">Judul</label>
                                     <div class="input-group">
                                         <input type="text" name="title_" class="form-control" placeholder="Judul kategori..." required>
+                                    </div>
+                                    <small class="form-text text-muted">ex. Berita, Olahraga, Budaya.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label class=" form-control-label">Slug</label>
+                                    <div class="input-group">
+                                        <input type="text" name="slug_" class="form-control" placeholder="Slug..." required>
                                     </div>
                                     <small class="form-text text-muted">ex. Berita, Olahraga, Budaya.</small>
                                 </div>
