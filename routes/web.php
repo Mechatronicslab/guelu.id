@@ -19,10 +19,11 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 // start post
 Route::get('/admin/all', 'PostController@all')->name('admin.all');
 Route::get('/admin/post', 'PostController@post')->name('admin.post');
+Route::post('/admin/post', 'PostController@InsertPost')->name('admin.InsertPost');
 // end post
 // start vlog
 Route::get('/admin/vlog', 'VlogController@vlog')->name('admin.vlog');
-Route::get('/admin/vlog/in_vlog', 'VlogController@in_vlog')->name('admin.in_vlog');
+Route::post('/admin/vlog', 'VlogController@InsertVlog')->name('admin.InsertVlog');
 // end vlog
 // start kategori
 Route::get('/admin/kategori', 'KategoriController@kategori')->name('admin.kategori');

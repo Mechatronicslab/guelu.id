@@ -52,51 +52,31 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach ($post_list as $post_)
                                 <tr>
-                                    <td>Lorem Ipsum dolor...</td>
-                                    <td>Administrator</td>
-                                    <td>Berita, Olahraga, Politik</td>
-                                    <td>Forum</td>
+                                    <td>{{ $post_->title_ }}</td>
+                                    <td>{{ $post_->author_ }}</td>
+                                    <td>{{ $post_->categories_id }}</td>
+                                    <td>
+                                        <?php if ($post_->type_ == 1): ?>
+                                            Berita
+                                        <?php elseif ($post_->type_ == 2): ?>
+                                            Forum
+                                        <?php elseif ($post_->type_ == 3): ?>
+                                            Video Blog
+                                        <?php endif; ?>
+                                    </td>
                                     <td>
                                         <i class="fa fa-comment btn-link"></i>
-                                        <span class="count">4</span>
+                                        <span class="count">0</span>
                                     </td>
-                                    <td>29/07/2018</td>
+                                    <td>{{ $post_->created_at->toDayDateTimeString() }}</td>
                                     <td>
                                         <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
                                         <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Lorem Ipsum dolor...</td>
-                                    <td>Administrator</td>
-                                    <td>Berita, Olahraga, Budaya</td>
-                                    <td>Berita</td>
-                                    <td>
-                                        <i class="fa fa-comment btn-link"></i>
-                                        <span class="count">4</span>
-                                    </td>
-                                    <td>29/07/2018</td>
-                                    <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#">Lorem Ipsum dolor...</a></td>
-                                    <td>Administrator</td>
-                                    <td>Berita, Olahraga, Budaya</td>
-                                    <td>Video Blog</td>
-                                    <td>
-                                        <i class="fa fa-comment btn-link"></i>
-                                        <span class="count">4</span>
-                                    </td>
-                                    <td>29/07/2018</td>
-                                    <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
