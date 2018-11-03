@@ -3,34 +3,58 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Redirect;
+use App\model\Categories;
+use App\model\Post;
+use App\model\Administrator;
 
 class HomeController extends Controller
 {
   public function index(){
-      return view('index');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('index', compact('post_list'), compact('kategori_list'));
   }
   public function berita(){
-      return view('berita');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('berita', compact('post_list'), compact('kategori_list'));
   }
   public function vlog(){
-      return view('vlog');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('vlog', compact('post_list'), compact('kategori_list'));
   }
   public function forum(){
-      return view('forum');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('forum', compact('post_list'), compact('kategori_list'));
   }
   public function about(){
-      return view('about');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('about', compact('post_list'), compact('kategori_list'));
   }
   public function contact(){
-      return view('contact');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('contact', compact('post_list'), compact('kategori_list'));
   }
   public function post(){
-      return view('post');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('post', compact('post_list'), compact('kategori_list'));
   }
   public function register(){
-      return view('register');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('register', compact('post_list'), compact('kategori_list'));
   }
   public function login(){
-      return view('login');
+      $post_list = Post::all();
+      $kategori_list = Categories::all();
+      return view('login', compact('post_list'), compact('kategori_list'));
   }
 }

@@ -32,8 +32,6 @@ class UserController extends Controller
       } else {
           return view('login');
       }
-
-
     }
 
     public function doLogin(Request $request){
@@ -61,10 +59,7 @@ class UserController extends Controller
     }
 
     public function doLogout(){
-
-
       Session::flush();
-
       return redirect('login')->with('alert','Kamu sudah logout');
    }
 

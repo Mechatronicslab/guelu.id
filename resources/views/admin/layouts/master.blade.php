@@ -37,29 +37,53 @@
 <body>
 
 <aside id="left-panel" class="left-panel">
-    <nav class="navbar navbar-expand-sm navbar-default">
-        <div id="main-menu" class="main-menu collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="{{ route('admin') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                </li>
-                <li class="menu-title">Mainmenu</li>
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-rocket"></i>Post</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-bars"></i><a href="{{ route('admin.all') }}">Semua Post</a></li>
-                        <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('admin.post') }}">Tambah Post</a></li>
-                        <li><i class="fa fa-video-camera"></i><a href="{{ route('admin.vlog') }}">Video Blog</a></li>
-                        <li><i class="fa fa-tag"></i><a href="{{ route('admin.kategori') }}">Kategori</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-sm navbar-default">
+    <div id="main-menu" class="main-menu collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="{{ route('admin') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+        </li>
+        <li class="menu-title">Mainmenu</li>
+        <li class="menu-item-has-children dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-rocket"></i>Post</a>
+          <ul class="sub-menu children dropdown-menu">
+            <li><i class="fa fa-bars"></i><a href="{{ route('admin.all') }}">Semua Post</a></li>
+            <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('admin.post') }}">Tambah Post</a></li>
+            <li><i class="fa fa-video-camera"></i><a href="{{ route('admin.vlog') }}">Video Blog</a></li>
+            <li><i class="fa fa-tag"></i><a href="{{ route('admin.kategori') }}">Kategori</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </aside>
 
 <div id="right-panel" class="right-panel">
 
+<<<<<<< HEAD
+  <header id="header" class="header">
+    <div class="top-left">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{ route('admin') }}"><img src="{{URL::to('/')}}/images/icon.png" alt="Logo"></a>
+        <a class="navbar-brand hidden" href="{{ route('admin') }}"><img src="{{URL::to('/')}}/images/favicon.png" alt="Logo"></a>
+        <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="header-menu">
+        <div class="user-area dropdown float-right">
+          <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="user-avatar rounded-circle" src="{{URL::to('/')}}/images/admin.jpg" alt="User Avatar">
+          </a>
+
+          <div class="user-menu dropdown-menu">
+            <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
+
+            <a class="nav-link" href="#"><i class="fa fa-cog"></i>Settings</a>
+
+            <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
+          </div>
+=======
     <header id="header" class="header">
         <div class="top-left">
             <div class="navbar-header">
@@ -85,22 +109,28 @@
                     </div>
                 </div>
             </div>
+>>>>>>> 1a7defeb9f7504dceac9044ac68ff4ca6928a027
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    @yield('content')
+  @yield('content')
 
-    <div class="clearfix"></div>
+  <div class="clearfix"></div>
 
-    <footer class="site-footer">
-        <div class="footer-inner bg-white">
-            <div class="row">
-                <div class="col-sm-6">
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
-                </div>
-            </div>
+  <footer class="site-footer">
+    <div class="footer-inner bg-white">
+      <div class="row">
+        <div class="col-sm-6">
+          Copyright &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script> All rights reserved.
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 
 </div>
 
@@ -144,15 +174,14 @@
 @yield('js-editor')
 
 <script>
-    jQuery(document).ready(function() {
-        jQuery(".standardSelect").chosen({
-            disable_search_threshold: 10,
-            no_results_text: "Oops, nothing found!",
-            width: "100%"
-        });
+  jQuery(document).ready(function() {
+    jQuery(".standardSelect").chosen({
+      disable_search_threshold: 10,
+      no_results_text: "Oops, nothing found!",
+      width: "100%"
     });
+  });
 </script>
-
 
 <script type="text/javascript">
     $(document).ready(function() {

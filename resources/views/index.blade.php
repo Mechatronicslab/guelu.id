@@ -20,23 +20,19 @@
                                 <div class="section_title">Sedang Hangat</div>
                                 <div class="section_tags ml-auto">
                                     <ul>
-                                        <li class="active"><a href="category.html">semua</a></li>
-                                        <li><a href="category.html">kategori #1</a></li>
-                                        <li><a href="category.html">kategori #2</a></li>
-                                        <li><a href="category.html">kategori #3</a></li>
-                                        <li><a href="category.html">kategori #4</a></li>
+                                        <li class="active"><a href="#">semua</a></li>
+                                        @foreach ($kategori_list->slice(0, 5) as $kategori_)
+                                        <li><a href="#">{{ $kategori_->title_ }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="section_panel_more">
                                     <ul>
                                         <li>more
                                             <ul>
-                                                <li><a href="category.html">kategori #5</a></li>
-                                                <li><a href="category.html">kategori #6</a></li>
-                                                <li><a href="category.html">kategori #7</a></li>
-                                                <li><a href="category.html">kategori #8</a></li>
-                                                <li><a href="category.html">kategori #9</a></li>
-                                                <li><a href="category.html">kategori #10</a></li>
+                                                @foreach ($kategori_list->slice(5, 10) as $kategori_)
+                                                <li><a href="#">{{ $kategori_->title_ }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>
@@ -45,14 +41,14 @@
                             <div class="section_content">
                                 <div class="grid clearfix">
 
-                                    <!-- Small Card With Background -->
-                                    <div class="card card_default card_small_with_background grid-item">
-                                        <div class="card_background" style="background-image:url({{URL::to('/')}}/images/post_11.jpg)"></div>
-                                        <div class="card-body">
-                                            <div class="card-title card-title-small"><a href="/post">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-                                            <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-                                        </div>
-                                    </div>
+                                  <!-- Small Card With Background -->
+                                  <div class="card card_default card_small_with_background grid-item">
+                                      <div class="card_background" style="background-image:url({{URL::to('/')}}/images/post_16.jpg)"></div>
+                                      <div class="card-body">
+                                          <div class="card-title card-title-small"><a href="/post">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+                                          <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+                                      </div>
+                                  </div>
 
                                     <!-- Small Card With Background -->
                                     <div class="card card_default card_small_with_background grid-item">
