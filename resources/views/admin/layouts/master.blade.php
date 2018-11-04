@@ -60,7 +60,6 @@
 
 <div id="right-panel" class="right-panel">
 
-<<<<<<< HEAD
   <header id="header" class="header">
     <div class="top-left">
       <div class="navbar-header">
@@ -83,7 +82,6 @@
 
             <a class="nav-link" href="#"><i class="fa fa-power-off"></i>Logout</a>
           </div>
-=======
     <header id="header" class="header">
         <div class="top-left">
             <div class="navbar-header">
@@ -109,7 +107,6 @@
                     </div>
                 </div>
             </div>
->>>>>>> 1a7defeb9f7504dceac9044ac68ff4ca6928a027
         </div>
       </div>
     </div>

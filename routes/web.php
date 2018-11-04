@@ -23,6 +23,7 @@ Route::get('/admin', 'UserController@index')->name('admin');
 Route::get('/admin/all', 'PostController@all')->name('admin.all');
 Route::get('/admin/post', 'PostController@post')->name('admin.post');
 Route::post('/admin/post', 'PostController@InsertPost')->name('admin.InsertPost');
+Route::post('/post/{post}', 'PostController@ShowPost')->name('admin.ShowPost');
 // end post
 // start vlog
 Route::get('/admin/vlog', 'VlogController@vlog')->name('admin.vlog');

@@ -54,15 +54,15 @@
                                 <tbody>
                                 @foreach ($post_list as $post_)
                                 <tr>
-                                    <td>{{ $post_->title_ }}</td>
-                                    <td>{{ $post_->author_ }}</td>
+                                    <td>{{ $post_->title }}</td>
+                                    <td>{{ $post_->author }}</td>
                                     <td>{{ $post_->categories_id }}</td>
                                     <td>
-                                        <?php if ($post_->type_ == 1): ?>
+                                        <?php if ($post_->type == 1): ?>
                                             Berita
-                                        <?php elseif ($post_->type_ == 2): ?>
+                                        <?php elseif ($post_->type == 2): ?>
                                             Forum
-                                        <?php elseif ($post_->type_ == 3): ?>
+                                        <?php elseif ($post_->type == 3): ?>
                                             Video Blog
                                         <?php endif; ?>
                                     </td>

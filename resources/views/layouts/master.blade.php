@@ -90,15 +90,15 @@
                 @foreach ($post_list->slice(0, 5) as $post_)
                 <!-- Slider Item -->
                 <div class="owl-item">
-                    <div class="home_slider_background" style="background-image:url({{URL::to('/')}}/images/slider_home_1.jpg)"></div>
+                    <div class="home_slider_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }})"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="home_slider_content">
-                                        <div class="home_slider_item_category trans_200"><a href="category.html" class="trans_200">Category</a></div>
+                                        <div class="home_slider_item_category trans_200"><a href="#" class="trans_200">Category</a></div>
                                         <div class="home_slider_item_title">
-                                            <a href="/post">{{ $post_->title_ }}</a>
+                                            <a href="/post">{{ $post_->title }}</a>
                                         </div>
                                         <div class="home_slider_item_link">
                                             <a href="/post" class="trans_200">Continue Reading
@@ -122,21 +122,21 @@
                                 <!-- Similar Post -->
                                 <div class="col-lg-3 col-md-6 similar_post_col">
                                     <div class="similar_post trans_200">
-                                        <a href="/post">Title Content Tranding #1</a>
+                                        <a href="#">Title Content Tranding #1</a>
                                     </div>
                                 </div>
 
                                 <!-- Similar Post -->
                                 <div class="col-lg-3 col-md-6 similar_post_col">
                                     <div class="similar_post trans_200">
-                                        <a href="/post">Title Content Tranding #2</a>
+                                        <a href="#">Title Content Tranding #2</a>
                                     </div>
                                 </div>
 
                                 <!-- Similar Post -->
                                 <div class="col-lg-3 col-md-6 similar_post_col">
                                     <div class="similar_post trans_200">
-                                        <a href="/post">Title Content Tranding #3</a>
+                                        <a href="#">Title Content Tranding #3</a>
                                     </div>
                                 </div>
 

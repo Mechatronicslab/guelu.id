@@ -36,8 +36,7 @@
                                                                 @endforeach
                                                             </ul>
                                                         </div>
-                                                    @endif
-                                                    //regis
+                                                    @endif                                                    
                                                     <form action="{{ url('/doRegister') }}" method="post">
                                                         {{ csrf_field() }}
                                                         <input name="nama_depan" id="nama_depan" type="text" class="contact_input contact_input_name" placeholder="Nama depan" required="required">

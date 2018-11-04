@@ -59,14 +59,14 @@
                                 <div class="form-group" hidden>
                                     <div class="input-group">
                                       @foreach ($administrator_list as $administrator_)
-                                          <input type="text" name="author_" value="{{ $administrator_->full_name }}" class="form-control" required>
+                                          <input type="text" name="author" value="{{ $administrator_->full_name }}" class="form-control" required>
                                       @endforeach
                                     </div>
                                 </div>
 
                                 <div class="form-group" hidden>
                                     <div class="input-group">
-                                          <input type="text" name="thumbnails_" value="-" class="form-control" required>
+                                          <input type="text" name="thumbnails" value="-" class="form-control" required>
                                     </div>
                                 </div>
 
@@ -76,11 +76,11 @@
                                 <div class="form-group">
                                       <label class=" form-control-label">Jenis Konten</label>
                                       <div class="input-group">
-                                          <select data-placeholder="Pilihan konten..." name="type_" class="standardSelect" tabindex="1">
+                                          <select data-placeholder="Pilihan konten..." name="type" class="standardSelect" tabindex="1">
                                               <option value="" label="default"></option>
-                                              <option name="type_" value="1">Berita</option>
-                                              <option name="type_" value="2">Forum</option>
-                                              <option name="type_" value="3">Video Blog</option>
+                                              <option name="type" value="1">Berita</option>
+                                              <option name="type" value="2">Forum</option>
+                                              <option name="type" value="3">Video Blog</option>
                                           </select>
                                       </div>
                                 </div>
@@ -94,7 +94,7 @@
                                               @foreach ($kategori_list as $kategori_)
                                               <div class="checkbox">
                                                   <label for="categories_id" class="form-check-label ">
-                                                      <input type="checkbox" id="categories_id" name="categories_id" value="{{ $kategori_->id_ }}" class="form-check-input">{{ $kategori_->title_ }}
+                                                      <input type="checkbox" id="categories_id" name="categories_id" value="{{ $kategori_->id_ }}" class="form-check-input">{{ $kategori_->title }}
                                                   </label>
                                               </div>
                                               @endforeach

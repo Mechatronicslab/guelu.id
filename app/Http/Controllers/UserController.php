@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\model\User;
+use App\model\Categories;
+use App\model\Post;
+use App\model\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Auth;
@@ -18,19 +21,20 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $post_list = Post::all();        
         if (!Session::get('login')) {
             return redirect('login')->with('alert', 'Kamu harus login dulu');
         } else {
-            return view('admin/index');
+            return view('admin/index', compact('post_list'));
         }
     }
 
     public function login(){
+      $post_list = Post::all();
       if (Session::get('login')) {
           return redirect('admin');
       } else {
-          return view('login');
+          return view('login', compact('post_list'));
       }
     }
 
@@ -55,7 +59,8 @@ class UserController extends Controller
    }
 
    public function register(Request $request){
-        return view('register');
+        $post_list = Post::all();
+        return view('register', compact('post_list'));
     }
 
     public function doLogout(){

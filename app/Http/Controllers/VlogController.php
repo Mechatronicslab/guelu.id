@@ -21,12 +21,12 @@ class VlogController extends Controller
     public function InsertVlog(Request $request){
         $items                = new Post;
         $items->categories_id = $request->categories_id;
-        $items->author_       = $request->author_;
-        $items->thumbnails_   = $request->thumbnails_;
-        $items->title_        = $request->title_;
-        $items->slug_         = str_slug($request->title_);
-        $items->content_      = $request->content_;
-        $items->type_         = $request->type_;
+        $items->author       = $request->author;
+        $items->thumbnails   = $request->thumbnails;
+        $items->title        = $request->title;
+        $items->slug         = str_slug($request->title);
+        $items->content      = $request->content;
+        $items->type         = $request->type;
         $items->save();
 
         return redirect('admin/vlog');

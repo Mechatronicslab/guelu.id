@@ -21,9 +21,9 @@ class KategoriController extends Controller
 
     public function InsertKategori(Request $request){
         $items          = new Categories;
-        $items->title_  = $request->title_;
-        $items->slug_   = $request->slug_;
-        $items->desc_   = $request->desc_;
+        $items->title  = $request->title;
+        $items->slug   = $request->slug;
+        $items->desc   = $request->desc;
         $items->save();
 
         return redirect('admin/kategori');

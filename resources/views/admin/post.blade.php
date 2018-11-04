@@ -44,21 +44,21 @@
                                 <div class="form-group">
                                     <label class=" form-control-label">Thumbnails</label>
                                     <div class="input-group">
-                                        <input name="thumbnails_" type="file" placeholder="Judul konten...">
+                                        <input name="thumbnails" type="file" placeholder="Judul konten...">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class=" form-control-label">Judul</label>
                                     <div class="input-group">
-                                        <input type="text" name="title_" class="form-control" placeholder="Judul konten..." required>
+                                        <input type="text" name="title" class="form-control" placeholder="Judul konten..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group" hidden>
                                     <div class="input-group">
                                       @foreach ($administrator_list as $administrator_)
-                                          <input type="text" name="author_" value="{{ $administrator_->full_name }}" class="form-control" required>
+                                          <input type="text" name="author" value="{{ $administrator_->id }}" class="form-control" required>
                                       @endforeach
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                 <div class="form-group">
                                     <label class=" form-control-label">Konten</label>
                                     <div class="input-group">
-                                        <textarea class="form-control" name="content_" id="content_"></textarea>
+                                        <textarea class="form-control" name="content" id="content"></textarea>
                                     </div>
                                 </div>
 
@@ -76,11 +76,11 @@
                                 <div class="form-group">
                                       <label class=" form-control-label">Jenis Konten</label>
                                       <div class="input-group">
-                                          <select data-placeholder="Pilihan konten..." name="type_" class="standardSelect" tabindex="1">
+                                          <select data-placeholder="Pilihan konten..." name="type" class="standardSelect" tabindex="1">
                                               <option value="" label="default"></option>
-                                              <option name="type_" value="1">Berita</option>
-                                              <option name="type_" value="2">Forum</option>
-                                              <option name="type_" value="3">Video Blog</option>
+                                              <option name="type" value="1">Berita</option>
+                                              <option name="type" value="2">Forum</option>
+                                              <option name="type" value="3">Video Blog</option>
                                           </select>
                                       </div>
                                 </div>
@@ -94,7 +94,7 @@
                                               @foreach ($kategori_list as $kategori_)
                                               <div class="checkbox">
                                                   <label for="categories_id" class="form-check-label ">
-                                                      <input type="checkbox" id="categories_id" name="categories_id" value="{{ $kategori_->id_ }}" class="form-check-input">{{ $kategori_->title_ }}
+                                                      <input type="checkbox" id="categories_id" name="categories_id" value="{{ $kategori_->id }}" class="form-check-input">{{ $kategori_->title }}
                                                   </label>
                                               </div>
                                               @endforeach
@@ -141,7 +141,7 @@
     </div>
 @section('js-editor')
 <script>
-        CKEDITOR.replace( 'content_', {
+        CKEDITOR.replace( 'content', {
           extraPlugins: 'codesnippet',
           codeSnippet_theme: 'arta',
           filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',

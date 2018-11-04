@@ -45,7 +45,7 @@
               <div class="form-group">
                 <label class=" form-control-label">Judul</label>
                 <div class="input-group">
-                  <input type="text" name="title_" class="form-control" placeholder="Judul kategori..." required>
+                  <input type="text" name="title" class="form-control" placeholder="Judul kategori..." required>
                 </div>
                 <small class="form-text text-muted">ex. Berita, Olahraga, Budaya.</small>
               </div>
@@ -53,7 +53,7 @@
               <div class="form-group">
                 <label class=" form-control-label">Slug</label>
                 <div class="input-group">
-                  <input type="text" name="slug_" class="form-control" placeholder="Slug..." required>
+                  <input type="text" name="slug" class="form-control" placeholder="Slug..." required>
                 </div>
                 <small class="form-text text-muted">ex. Berita, Olahraga, Budaya.</small>
               </div>
@@ -61,7 +61,7 @@
               <div class="form-group">
                 <label class=" form-control-label">Deskripsi</label>
                 <div class="input-group">
-                  <textarea name="desc_" placeholder="Teks disini..." class="form-control"></textarea>
+                  <textarea name="desc" placeholder="Teks disini..." class="form-control"></textarea>
                 </div>
               </div>
 

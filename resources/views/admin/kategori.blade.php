@@ -52,8 +52,8 @@
                                 <tbody>
                                 @foreach ($kategori_list as $kategori_)
                                     <tr>
-                                        <td>{{ $kategori_->title_ }}</td>
-                                        <td>{{ $kategori_->slug_ }}</td>
+                                        <td>{{ $kategori_->title }}</td>
+                                        <td>{{ $kategori_->slug }}</td>
                                         <td>{{ $kategori_->created_at->toDayDateTimeString() }}</td>
                                         <td>
                                             <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
