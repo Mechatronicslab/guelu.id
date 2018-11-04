@@ -7,6 +7,7 @@ Route::get('/forum', 'HomeController@forum')->name('forum');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/post', 'HomeController@post')->name('post');
+Route::get('/post/{post}', 'HomeController@showPost')->name('showPost');
 Route::get('/register', 'UserController@register')->name('register');
 Route::post('/doRegister', 'UserController@doRegister')->name('doRegister');
 Route::get('/login', 'UserController@login')->name('login');
@@ -23,7 +24,6 @@ Route::get('/admin', 'UserController@index')->name('admin');
 Route::get('/admin/all', 'PostController@all')->name('admin.all');
 Route::get('/admin/post', 'PostController@post')->name('admin.post');
 Route::post('/admin/post', 'PostController@InsertPost')->name('admin.InsertPost');
-Route::post('/post/{post}', 'PostController@ShowPost')->name('admin.ShowPost');
 // end post
 // start vlog
 Route::get('/admin/vlog', 'VlogController@vlog')->name('admin.vlog');

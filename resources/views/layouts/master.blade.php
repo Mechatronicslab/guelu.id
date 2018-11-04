@@ -98,10 +98,10 @@
                                     <div class="home_slider_content">
                                         <div class="home_slider_item_category trans_200"><a href="#" class="trans_200">Category</a></div>
                                         <div class="home_slider_item_title">
-                                            <a href="/post">{{ $post_->title }}</a>
+                                            <a href="/post/{{ $post_->id }}">{{ $post_->title }}</a>
                                         </div>
                                         <div class="home_slider_item_link">
-                                            <a href="/post" class="trans_200">Continue Reading
+                                            <a href="/post/{{ $post_->id }}" class="trans_200">Continue Reading
                                                 <svg version="1.1" id="link_arrow_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      width="19px" height="13px" viewBox="0 0 19 13" enable-background="new 0 0 19 13" xml:space="preserve">
 													<polygon fill="#FFFFFF" points="12.475,0 11.061,0 17.081,6.021 0,6.021 0,7.021 17.038,7.021 11.06,13 12.474,13 18.974,6.5 "/>

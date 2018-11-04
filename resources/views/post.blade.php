@@ -8,12 +8,13 @@
         <div class="container">
             <div class="row row-lg-eq-height">
                 <div class="col-lg-9">
+                  @foreach ($isi as $id)
                     <div class="post_content">
                         <div class="post_panel post_panel_top d-flex flex-row align-items-center justify-content-start">
                             <div class="author_image">
                                 <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
                             </div>
-                            <div class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></div>
+                            <div class="post_meta"><a href="#">admin</a><span>{{ $id->created_at->toDayDateTimeString() }}</span></div>
                             <div class="post_share ml-sm-auto">
                                 <span>share</span>
                                 <ul class="post_share_list">
@@ -27,35 +28,7 @@
                             </div>
                         </div>
                         <div class="post_body">
-                            <p class="post_p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla,
-                                mollis eu metus in, sagittis fringilla tortor. Phasellus eget purus id felis dignissim
-                                convallis. Suspendisse et augue dui. Morbi gravida sed justo vel venenatis. Ut tempor
-                                pretium maximus. Donec libero diam, faucibus vitae lectus nec, accumsan gravida dui. Nam
-                                interdum mi eget lacus aliquet, sit amet ultricies magna pharetra. In ut odio a ligula
-                                egestas pretium et quis sapien. Etiam faucibus magna eu porta vulputate. Aliquam euismod
-                                rhoncus malesuada. Nunc rutrum hendrerit semper.</p>
-                            <figure>
-                                <img src="{{URL::to('/')}}/images/post_image.jpg" alt="">
-                                <figcaption>Lorem Ipsum Dolor Sit Amet</figcaption>
-                            </figure>
-                            <p class="post_p">Maecenas vitae sem varius, imperdiet nisi a, tristique nisi. Sed
-                                scelerisque suscipit leo cursus accumsan. Donec vel turpis quam. Mauris non nisl nec
-                                nunc gravida ullamcorper id vestibulum magna. Donec non velit finibus, laoreet arcu nec,
-                                facilisis augue. Aliquam sed purus id erat accumsan congue. Mauris semper ullamcorper
-                                nibh non pellentesque. Aenean euismod purus sit amet quam vehicula ornare.</p>
-                            <div class="post_quote">
-                                <p class="post_p">Aliquam auctor lacus a dapibus pulvinar. Morbi in elit erat. Quisque
-                                    et augue nec tortor blandit hendrerit eget sit amet sapien. Curabitur at tincidunt
-                                    metus, quis porta ex. Duis lacinia metus vel eros cursus pretium eget.</p>
-                                <div class="post_quote_source">Robert Morgan</div>
-                            </div>
-                            <p class="post_p">Donec orci dolor, pretium in luctus id, consequat vitae nibh. Quisque
-                                hendrerit, lorem sit amet mollis malesuada, urna orci volutpat ex, sed scelerisque nunc
-                                velit et massa. Sed maximus id erat vel feugiat. Phasellus bibendum nisi non urna
-                                bibendum elementum. Aenean tincidunt nibh vitae ex facilisis ultrices. Integer ornare
-                                efficitur ultrices. Integer neque lectus, venenatis at pulvinar quis, aliquet id neque.
-                                Mauris ultrices consequat velit, sed dignissim elit posuere in. Cras vitae dictum
-                                dui.</p>
+                            {!! htmlspecialchars_decode($id->content) !!}
                             <div class="post_tags">
                                 <ul>
                                     <li class="post_tag"><a href="#">Liberty</a></li>
@@ -65,6 +38,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <div class="post_panel bottom_panel d-flex flex-row align-items-center justify-content-start">
                             <div class="author_image">
                                 <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
@@ -182,6 +156,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <div class="load_more">
                         <div id="load_more" class="load_more_button text-center trans_200">Load More</div>
                     </div>

@@ -44,7 +44,7 @@
                                   <div class="card card_default card_small_with_background grid-item">
                                       <div class="card_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }})"></div>
                                       <div class="card-body">
-                                          <div class="card-title card-title-small"><a href="{{ route('post') }}">{{ $post_->title }}</a></div>
+                                          <div class="card-title card-title-small"><a href="/post/{{ $post_->id }}">{{ $post_->title }}</a></div>
                                           <small class="post_meta"><a href="#">admin</a><span>{{ $post_->created_at->toDayDateTimeString() }}</span></small>
                                       </div>
                                   </div>

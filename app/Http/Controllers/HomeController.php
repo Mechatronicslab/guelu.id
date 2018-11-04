@@ -66,4 +66,12 @@ class HomeController extends Controller
       $administrator_list = Administrator::all();
       return view('login', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
   }
+
+  public function showPost($id){            
+      $isi = Post::where('id',$id)->get();
+      $post_list = Post::orderBy('id', 'DESC')->get();
+      $kategori_list = Categories::all();
+      $administrator_list = Administrator::all();
+      return view('post', compact('isi'), compact('post_list'), compact('kategori_list'), compact('administrator_list'));
+  }
 }
