@@ -18,56 +18,50 @@ class HomeController extends Controller
       $administrator_list = Administrator::all();
       return view('index', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
   }
+
   public function berita(){
       $post_list = Post::orderBy('id', 'DESC')->get();
       $kategori_list = Categories::all();
       $administrator_list = Administrator::all();
       return view('berita', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
   }
+
   public function vlog(){
       $post_list = Post::orderBy('id', 'DESC')->get();
       $kategori_list = Categories::all();
       $administrator_list = Administrator::all();
       return view('vlog', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
   }
+
   public function forum(){
       $post_list = Post::orderBy('id', 'DESC')->get();
       $kategori_list = Categories::all();
       $administrator_list = Administrator::all();
       return view('forum', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
   }
+
   public function about(){
       $post_list = Post::orderBy('id', 'DESC')->get();
       $kategori_list = Categories::all();
       $administrator_list = Administrator::all();
       return view('about', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
   }
+
   public function contact(){
       $post_list = Post::orderBy('id', 'DESC')->get();
       $kategori_list = Categories::all();
       $administrator_list = Administrator::all();
       return view('contact', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
   }
+
   public function post(){
       $post_list = Post::orderBy('id', 'DESC')->get();
       $kategori_list = Categories::all();
       $administrator_list = Administrator::all();
       return view('post', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
   }
-  public function register(){
-      $post_list = Post::orderBy('id', 'DESC')->get();
-      $kategori_list = Categories::all();
-      $administrator_list = Administrator::all();
-      return view('register', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
-  }
-  public function login(){
-      $post_list = Post::orderBy('id', 'DESC')->get();
-      $kategori_list = Categories::all();
-      $administrator_list = Administrator::all();
-      return view('login', compact('post_list'), compact('kategori_list'), compact('administrator_list'));
-  }
 
-  public function showPost($id){            
+  public function showPost($id){
       $isi = Post::where('id',$id)->get();
       $post_list = Post::orderBy('id', 'DESC')->get();
       $kategori_list = Categories::all();
