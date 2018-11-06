@@ -7,10 +7,8 @@
     <div class="page_content">
         <div class="container">
             <div class="row row-lg-eq-height">
-
                 <div class="col-lg-9">
                     <div class="main_content">
-
                         <div class="blog_section">
                             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
                                 <div class="section_title">Semua Berita</div>
@@ -36,7 +34,6 @@
                             </div>
                             <div class="section_content">
                                 <div class="grid clearfix">
-
                                   @foreach ($post_list->slice(0, 12) as $post_)
                                   <div class="card card_default card_small_with_background grid-item">
                                       <div class="card_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }}"></div>

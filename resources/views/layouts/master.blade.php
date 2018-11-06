@@ -20,8 +20,6 @@
 
 <div class="super_container">
 
-    <!-- Header -->
-
     <header class="header">
         <div class="container">
             <div class="row">
@@ -55,8 +53,6 @@
         </div>
     </header>
 
-    <!-- Menu -->
-
     <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
         <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
         <div class="logo menu_mm"><a href="{{ route('index') }}"><img class="header_icon" src="{{URL::to('/')}}/images/icon.png" alt=""></a></div>
@@ -79,16 +75,11 @@
         </nav>
     </div>
 
-    <!-- Home -->
-
     <div class="home">
-
-        <!-- Home Slider -->
 
         <div class="home_slider_container">
             <div class="owl-carousel owl-theme home_slider">
-                @foreach ($post_list->slice(0, 5) as $post_)
-                <!-- Slider Item -->
+                @foreach ($post_list->slice(0, 3  ) as $post_)
                 <div class="owl-item">
                     <div class="home_slider_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }})"></div>
                     <div class="home_slider_content_container">
@@ -96,7 +87,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="home_slider_content">
-                                        <div class="home_slider_item_category trans_200"><a href="#" class="trans_200">Category</a></div>
+                                        <div class="home_slider_item_category trans_200"><a href="/berita/{{ $post_->categories->slug }}" class="trans_200">Category</a></div>
                                         <div class="home_slider_item_title">
                                             <a href="/post/{{ $post_->id }}">{{ $post_->title }}</a>
                                         </div>
@@ -114,32 +105,16 @@
                         </div>
                     </div>
 
-                    <!-- Similar Posts -->
                     <div class="similar_posts_container">
                         <div class="container">
                             <div class="row d-flex flex-row align-items-end">
-
-                                <!-- Similar Post -->
+                                @foreach ($post_list->slice(0, 3) as $post_)
                                 <div class="col-lg-3 col-md-6 similar_post_col">
                                     <div class="similar_post trans_200">
-                                        <a href="#">Title Content Tranding #1</a>
+                                        <a href="/post/{{ $post_->id }}">{{ $post_->title }}</a>
                                     </div>
                                 </div>
-
-                                <!-- Similar Post -->
-                                <div class="col-lg-3 col-md-6 similar_post_col">
-                                    <div class="similar_post trans_200">
-                                        <a href="#">Title Content Tranding #2</a>
-                                    </div>
-                                </div>
-
-                                <!-- Similar Post -->
-                                <div class="col-lg-3 col-md-6 similar_post_col">
-                                    <div class="similar_post trans_200">
-                                        <a href="#">Title Content Tranding #3</a>
-                                    </div>
-                                </div>
-
+                                @endforeach
                             </div>
                         </div>
 
@@ -152,19 +127,16 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 @endforeach
-
             </div>
 
             <div class="custom_nav_container home_slider_nav_container">
                 <div class="custom_prev custom_prev_home_slider">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                         width="7px" height="12px" viewBox="0 0 7 12" enable-background="new 0 0 7 12" xml:space="preserve">
-						<polyline fill="#FFFFFF" points="0,5.61 5.609,0 7,0 7,1.438 2.438,6 7,10.563 7,12 5.609,12 -0.002,6.39 "/>
-					</svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="7px" height="12px" viewBox="0 0 7 12" enable-background="new 0 0 7 12" xml:space="preserve">
+                    <polyline fill="#FFFFFF" points="0,5.61 5.609,0 7,0 7,1.438 2.438,6 7,10.563 7,12 5.609,12 -0.002,6.39 "/>
+					          </svg>
                 </div>
                 <ul id="custom_dots" class="custom_dots custom_dots_home_slider">
                     <li class="custom_dot custom_dot_home_slider active"><span></span></li>
@@ -172,21 +144,16 @@
                     <li class="custom_dot custom_dot_home_slider"><span></span></li>
                 </ul>
                 <div class="custom_next custom_next_home_slider">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                         width="7px" height="12px" viewBox="0 0 7 12" enable-background="new 0 0 7 12" xml:space="preserve">
-						<polyline fill="#FFFFFF" points="6.998,6.39 1.389,12 -0.002,12 -0.002,10.562 4.561,6 -0.002,1.438 -0.002,0 1.389,0 7,5.61 "/>
-					</svg>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="7px" height="12px" viewBox="0 0 7 12" enable-background="new 0 0 7 12" xml:space="preserve">
+						        <polyline fill="#FFFFFF" points="6.998,6.39 1.389,12 -0.002,12 -0.002,10.562 4.561,6 -0.002,1.438 -0.002,0 1.389,0 7,5.61 "/>
+					          </svg>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- Page Content -->
-
     @yield('content')
-
-    <!-- Footer -->
 
     <footer class="footer">
         <div class="container">
@@ -204,9 +171,7 @@
                                 <li class="footer_social_google"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
-                        <div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+                        <div class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</div>
                     </div>
                 </div>
                 <div class="col-lg-3 order-lg-2 order-1">
@@ -240,5 +205,6 @@
 <script src="{{URL::to('/')}}/plugins/masonry/masonry.js"></script>
 <script src="{{URL::to('/')}}/plugins/masonry/images_loaded.js"></script>
 <script src="{{URL::to('/')}}/js/custom.js"></script>
+
 </body>
 </html>

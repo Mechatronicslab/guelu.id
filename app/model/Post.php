@@ -4,6 +4,7 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 use App\model\Administrator;
+use App\model\Categories;
 
 class Post extends Model
 {
@@ -11,6 +12,10 @@ class Post extends Model
 
     public function administrator(){
         return $this->belongsTo('App\model\Administrator','author','id');
+    }
+
+    public function categories(){
+        return $this->belongsTo('App\model\Categories','categories_id','id');
     }
 
 }
