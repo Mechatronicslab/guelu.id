@@ -16,7 +16,7 @@
                                   <ul>
                                       <li class="active"><a href="#">semua</a></li>
                                       @foreach ($kategori_list->slice(0, 4) as $kategori_)
-                                      <li><a href="#">{{ $kategori_->title }}</a></li>
+                                      <li><a href="/berita/{{ $kategori_->slug }}">{{ $kategori_->title }}</a></li>
                                       @endforeach
                                   </ul>
                               </div>
@@ -25,7 +25,7 @@
                                       <li>more
                                           <ul>
                                               @foreach ($kategori_list->slice(4, 10) as $kategori_)
-                                              <li><a href="#">{{ $kategori_->title }}</a></li>
+                                              <li><a href="/berita/{{ $kategori_->slug }}">{{ $kategori_->title }}</a></li>
                                               @endforeach
                                           </ul>
                                       </li>
@@ -38,8 +38,8 @@
                                   <div class="card card_default card_small_with_background grid-item">
                                       <div class="card_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }})"></div>
                                       <div class="card-body">
-                                          <div class="card-title card-title-small"><a href="/post">{{ $post_->title }}</a></div>
-                                          <small class="post_meta"><a href="#">admin</a><span>{{ $post_->created_at->toDayDateTimeString() }}</span></small>
+                                          <div class="card-title card-title-small"><a href="/post/{{ $post_->id }}">{{ $post_->title }}</a></div>
+                                          <small class="post_meta"><a href="#">{{ $post_->administrator->first_name }}</a><span>{{ $post_->created_at->toDayDateTimeString() }}</span></small>
                                       </div>
                                   </div>
                                   @endforeach
@@ -62,12 +62,12 @@
                                         <div class="owl-item">
                                           @foreach ($post_list->slice(0, 4) as $post_)
                                             <div class="side_post">
-                                                <a href="/post">
+                                                <a href="/post/{{ $post_->id }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                                         <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }}" alt=""></div></div>
                                                         <div class="side_post_content">
                                                             <div class="side_post_title">{{ $post_->title }}</div>
-                                                            <small class="post_meta">admin<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
+                                                            <small class="post_meta">{{ $post_->administrator->first_name }}<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -88,12 +88,12 @@
                                         <div class="owl-item">
                                           @foreach ($post_list->slice(0, 4) as $post_)
                                             <div class="side_post">
-                                                <a href="/post">
+                                                <a href="/post/{{ $post_->id }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                                         <div class="side_post_image"><div><img src="{{URL::to('/')}}/images/vid_4.jpg" alt=""></div></div>
                                                         <div class="side_post_content">
                                                             <div class="side_post_title">{{ $post_->title }}</div>
-                                                            <small class="post_meta">admin<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
+                                                            <small class="post_meta">{{ $post_->administrator->first_name }}<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
                                                         </div>
                                                     </div>
                                                 </a>

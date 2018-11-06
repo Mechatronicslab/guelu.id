@@ -8,12 +8,8 @@
         <div class="container">
             <div class="row row-lg-eq-height">
 
-                <!-- Main Content -->
-
                 <div class="col-lg-9">
                     <div class="main_content">
-
-                        <!-- Blog Section - What's Trending -->
 
                         <div class="blog_section">
                             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
@@ -22,7 +18,7 @@
                                     <ul>
                                         <li class="active"><a href="#">semua</a></li>
                                         @foreach ($kategori_list->slice(0, 4) as $kategori_)
-                                        <li><a href="#">{{ $kategori_->title }}</a></li>
+                                        <li><a href="/berita/{{ $kategori_->slug }}">{{ $kategori_->title }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -31,7 +27,7 @@
                                         <li>more
                                             <ul>
                                                 @foreach ($kategori_list->slice(4, 10) as $kategori_)
-                                                <li><a href="#">{{ $kategori_->title }}</a></li>
+                                                <li><a href="/berita/{{ $kategori_->slug }}">{{ $kategori_->title }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
@@ -45,17 +41,13 @@
                                       <div class="card_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }})"></div>
                                       <div class="card-body">
                                           <div class="card-title card-title-small"><a href="/post/{{ $post_->id }}">{{ $post_->title }}</a></div>
-                                          <small class="post_meta"><a href="#">admin</a><span>{{ $post_->created_at->toDayDateTimeString() }}</span></small>
+                                          <small class="post_meta"><a href="#">{{ $post_->administrator->first_name }}</a><span>{{ $post_->created_at->toDayDateTimeString() }}</span></small>
                                       </div>
                                   </div>
                                   @endforeach
                                 </div>
-
                             </div>
-
                         </div>
-
-                        <!-- Blog Section - Videos -->
 
                         <div class="blog_section">
                             <div class="section_panel d-flex flex-row align-items-center justify-content-start">
@@ -90,8 +82,6 @@
                             </div>
                         </div>
 
-                        <!-- Blog Section - Latest -->
-
                         <div class="sidebar_section future_events">
                             <div class="sidebar_title_container">
                                 <div class="section_title">Pembahasan Forum</div>
@@ -118,15 +108,9 @@
                                 </div>
                             </div>
                             <div class="sidebar_section_content">
-
-                                <!-- Sidebar Slider -->
                                 <div class="sidebar_slider_container">
                                     <div class="owl-carousel owl-theme sidebar_slider_events">
-
-                                        <!-- Future Events Slider Item -->
                                         <div class="owl-item">
-
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -142,7 +126,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -158,7 +141,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -174,7 +156,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -190,7 +171,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -205,13 +185,10 @@
                                                     </div>
                                                 </a>
                                             </div>
-
                                         </div>
 
-                                        <!-- Future Events Slider Item -->
                                         <div class="owl-item">
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -227,7 +204,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -243,7 +219,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -259,7 +234,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -275,7 +249,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -290,13 +263,10 @@
                                                     </div>
                                                 </a>
                                             </div>
-
                                         </div>
 
-                                        <!-- Future Events Slider Item -->
                                         <div class="owl-item">
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -312,7 +282,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -328,7 +297,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -344,7 +312,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -360,7 +327,6 @@
                                                 </a>
                                             </div>
 
-                                            <!-- Future Events Post -->
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -375,9 +341,7 @@
                                                     </div>
                                                 </a>
                                             </div>
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -390,7 +354,6 @@
                             <div class="section_content">
                                 <div class="grid clearfix">
 
-                                    <!-- Small Card With Background -->
                                     <div class="card card_default card_small_with_background grid-item">
                                         <div class="card_background" style="background-image:url({{URL::to('/')}}/images/sample_caleg.jpg)"></div>
                                         <div class="card-body">
@@ -399,7 +362,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- Small Card With Background -->
                                     <div class="card card_default card_small_with_background grid-item">
                                         <div class="card_background" style="background-image:url({{URL::to('/')}}/images/sample_caleg.jpg)"></div>
                                         <div class="card-body">
@@ -408,7 +370,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- Small Card With Background -->
                                     <div class="card card_default card_small_with_background grid-item">
                                         <div class="card_background" style="background-image:url({{URL::to('/')}}/images/sample_caleg.jpg)"></div>
                                         <div class="card-body">
@@ -417,7 +378,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- Small Card With Background -->
                                     <div class="card card_default card_small_with_background grid-item">
                                         <div class="card_background" style="background-image:url({{URL::to('/')}}/images/sample_caleg.jpg)"></div>
                                         <div class="card-body">
@@ -426,7 +386,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- Small Card With Background -->
                                     <div class="card card_default card_small_with_background grid-item">
                                         <div class="card_background" style="background-image:url({{URL::to('/')}}/images/sample_caleg.jpg)"></div>
                                         <div class="card-body">
@@ -435,12 +394,11 @@
                                         </div>
                                     </div>
 
-                                    <!-- Small Card With Background -->
                                     <div class="card card_default card_small_with_background grid-item">
                                         <div class="card_background" style="background-image:url({{URL::to('/')}}/images/sample_caleg.jpg)"></div>
                                         <div class="card-body">
                                             <div class="card-title card-title-small"><a href="/post">Nama Calon Legislatif</a></div>
-                                            <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+                                            <small class="post_meta"><a href="#">{{ $post_->administrator->first_name }}</a><span>Sep 29, 2017 at 9:48 am</span></small>
                                         </div>
                                     </div>
                                 </div>
@@ -461,12 +419,12 @@
                                         <div class="owl-item">
                                           @foreach ($post_list->slice(0, 4) as $post_)
                                             <div class="side_post">
-                                                <a href="/post">
+                                                <a href="/post/{{ $post_->id }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                                         <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }}" alt=""></div></div>
                                                         <div class="side_post_content">
                                                             <div class="side_post_title">{{ $post_->title }}</div>
-                                                            <small class="post_meta">admin<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
+                                                            <small class="post_meta">{{ $post_->administrator->first_name }}<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -487,12 +445,12 @@
                                         <div class="owl-item">
                                           @foreach ($post_list->slice(0, 4) as $post_)
                                             <div class="side_post">
-                                                <a href="/post">
+                                                <a href="/post/{{ $post_->id }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                                         <div class="side_post_image"><div><img src="{{URL::to('/')}}/images/vid_4.jpg" alt=""></div></div>
                                                         <div class="side_post_content">
                                                             <div class="side_post_title">{{ $post_->title }}</div>
-                                                            <small class="post_meta">admin<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
+                                                            <small class="post_meta">{{ $post_->administrator->first_name }}<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -505,7 +463,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

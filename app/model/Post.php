@@ -9,7 +9,8 @@ class Post extends Model
 {
     protected $post_list = 'posts';
 
-    public function admin(){
-        return $this->belongsTo('App\model\Administrator');
+    public function administrator(){
+        return $this->belongsTo('App\model\Administrator','author','id');
     }
+
 }
