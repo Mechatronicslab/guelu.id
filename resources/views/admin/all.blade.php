@@ -64,6 +64,8 @@
                                             Forum
                                         <?php elseif ($post_->type == 3): ?>
                                             Video Blog
+                                        <?php elseif ($post_->type == 4): ?>
+                                            Slideshow
                                         <?php endif; ?>
                                     </td>
                                     <td>

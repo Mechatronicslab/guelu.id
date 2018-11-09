@@ -81,6 +81,7 @@
                                               <option name="type" value="1">Berita</option>
                                               <option name="type" value="2">Forum</option>
                                               <option name="type" value="3">Video Blog</option>
+                                              <option name="type" value="4">Slideshow</option>
                                           </select>
                                       </div>
                                 </div>

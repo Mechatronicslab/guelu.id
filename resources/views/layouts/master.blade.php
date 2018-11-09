@@ -79,20 +79,20 @@
 
         <div class="home_slider_container">
             <div class="owl-carousel owl-theme home_slider">
-                @foreach ($post_list->slice(0, 3  ) as $post_)
+                @foreach ($slideshow->slice(0, 3) as $slide)
                 <div class="owl-item slider slideshow">
-                    <div class="home_slider_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }})"></div>
+                    <div class="home_slider_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $slide->thumbnails }})"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="home_slider_content">
-                                        <div class="home_slider_item_category trans_200"><a href="/berita/{{ $post_->categories->slug }}" class="trans_200">Category</a></div>
+                                        <div class="home_slider_item_category trans_200"><a href="/berita/{{ $slide->categories->slug }}" class="trans_200">Category</a></div>
                                         <div class="home_slider_item_title">
-                                            <a href="/post/{{ $post_->id }}">{{ $post_->title }}</a>
+                                            <a href="/post/{{ $slide->id }}">{{ $slide->title }}</a>
                                         </div>
                                         <div class="home_slider_item_link">
-                                            <a href="/post/{{ $post_->id }}" class="trans_200">Continue Reading
+                                            <a href="/post/{{ $slide->id }}" class="trans_200">Continue Reading
                                                 <svg version="1.1" id="link_arrow_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      width="19px" height="13px" viewBox="0 0 19 13" enable-background="new 0 0 19 13" xml:space="preserve">
 													<polygon fill="#FFFFFF" points="12.475,0 11.061,0 17.081,6.021 0,6.021 0,7.021 17.038,7.021 11.06,13 12.474,13 18.974,6.5 "/>
@@ -108,23 +108,13 @@
                     <div class="similar_posts_container">
                         <div class="container">
                             <div class="row d-flex flex-row align-items-end">
-                                @foreach ($post_list->slice(0, 3) as $post_)
+                                @foreach ($berita->slice(0, 4) as $beritas)
                                 <div class="col-lg-3 col-md-6 similar_post_col">
                                     <div class="similar_post trans_200">
-                                        <a href="/post/{{ $post_->id }}">{{ $post_->title }}</a>
+                                        <a href="/post/{{ $beritas->id }}">{{ $beritas->title }}</a>
                                     </div>
                                 </div>
                                 @endforeach
-                            </div>
-                        </div>
-
-                        <div class="home_slider_next_container">
-                            <div class="home_slider_next" style="background-image:url({{URL::to('/')}}/images/pager.jpg)">
-                                <div class="home_slider_next_background trans_400"></div>
-                                <div class="home_slider_next_content trans_400">
-                                    <div class="home_slider_next_title">next</div>
-                                    <div class="home_slider_next_link">Title Content Tranding #1</div>
-                                </div>
                             </div>
                         </div>
                     </div>

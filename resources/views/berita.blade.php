@@ -60,14 +60,14 @@
                                 <div class="sidebar_slider_container">
                                     <div class="owl-carousel owl-theme sidebar_slider_top">
                                         <div class="owl-item">
-                                          @foreach ($post_list->slice(0, 4) as $post_)
+                                          @foreach ($berita->slice(0, 4) as $beritas)
                                             <div class="side_post">
-                                                <a href="/post/{{ $post_->id }}">
+                                                <a href="/post/{{ $beritas->id }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-                                                        <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }}" alt=""></div></div>
+                                                        <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $beritas->thumbnails }}" alt=""></div></div>
                                                         <div class="side_post_content">
-                                                            <div class="side_post_title">{{ $post_->title }}</div>
-                                                            <small class="post_meta">{{ $post_->administrator->first_name }}<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
+                                                            <div class="side_post_title">{{ $beritas->title }}</div>
+                                                            <small class="post_meta">{{ $beritas->administrator->first_name }}<span>{{ $beritas->created_at->formatLocalized('%a, %b %d') }}</span></small>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -86,14 +86,14 @@
                                 <div class="sidebar_slider_container">
                                     <div class="owl-carousel owl-theme sidebar_slider_top">
                                         <div class="owl-item">
-                                          @foreach ($post_list->slice(0, 4) as $post_)
+                                          @foreach ($vlog->slice(0, 4) as $vlogs)
                                             <div class="side_post">
-                                                <a href="/post/{{ $post_->id }}">
+                                                <a href="/post/{{ $vlogs->id }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-                                                        <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }}" alt=""></div></div>
+                                                        <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $vlogs->thumbnails }}" alt=""></div></div>
                                                         <div class="side_post_content">
-                                                            <div class="side_post_title">{{ $post_->title }}</div>
-                                                            <small class="post_meta">{{ $post_->administrator->first_name }}<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
+                                                            <div class="side_post_title">{{ $vlogs->title }}</div>
+                                                            <small class="post_meta">{{ $vlogs->administrator->first_name }}<span>{{ $vlogs->created_at->formatLocalized('%a, %b %d') }}</span></small>
                                                         </div>
                                                     </div>
                                                 </a>
