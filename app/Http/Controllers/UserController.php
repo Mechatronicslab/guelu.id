@@ -38,7 +38,7 @@ class UserController extends Controller
       if (Session::get('login')) {
           return redirect('admin');
       } else {
-          return view('login', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', ));
+          return view('login', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog'));
       }
     }
 
@@ -68,7 +68,7 @@ class UserController extends Controller
         $slideshow = Post::where('type', '4')->get();
         $forum = Post::where('type', '2')->get();
         $vlog = Post::where('type', '3')->get();
-        return view('register', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', ));
+        return view('register', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog'));
     }
 
     public function doLogout(){
