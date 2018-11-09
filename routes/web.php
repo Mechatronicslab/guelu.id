@@ -24,6 +24,9 @@ Route::get('/admin', 'UserController@index')->name('admin');
 Route::get('/admin/all', 'PostController@all')->name('admin.all');
 Route::get('/admin/post', 'PostController@post')->name('admin.post');
 Route::post('/admin/post', 'PostController@InsertPost')->name('admin.InsertPost');
+Route::get('/admin/edit/{post}', 'PostController@EditPost')->name('admin.EditPost');
+Route::patch('/admin/edit/{post}', 'PostController@UpdatePost')->name('admin.UpdatePost');
+Route::delete('/admin/all/{post}/delete', 'PostController@DeletePost')->name('admin.DeletePost');
 // end post
 // start vlog
 Route::get('/admin/vlog', 'VlogController@vlog')->name('admin.vlog');

@@ -80,7 +80,7 @@
         <div class="home_slider_container">
             <div class="owl-carousel owl-theme home_slider">
                 @foreach ($post_list->slice(0, 3  ) as $post_)
-                <div class="owl-item">
+                <div class="owl-item slider slideshow">
                     <div class="home_slider_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }})"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
@@ -205,6 +205,19 @@
 <script src="{{URL::to('/')}}/plugins/masonry/masonry.js"></script>
 <script src="{{URL::to('/')}}/plugins/masonry/images_loaded.js"></script>
 <script src="{{URL::to('/')}}/js/custom.js"></script>
+
+<script type="text/javascript">
+// $(".slideshow > div:gt(0)").hide();
+//
+// setInterval(function() {
+//   $('.slideshow')
+//     .fadeOut(1000)
+//     .next()
+//     .fadeIn(1000)
+//     .end()
+//     .appendTo('.slideshow');
+// },  3000);
+</script>
 
 </body>
 </html>

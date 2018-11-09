@@ -23,7 +23,7 @@ class PostController extends Controller
     public function post(){
         $administrator_list = Administrator::all();
         $kategori_list = Categories::all();
-        return view('admin.post', compact('kategori_list'), compact('administrator_list'));
+        return view('admin.post', compact('kategori_list', 'administrator_list'));
     }
 
     public function InsertPost(Request $request){
@@ -41,5 +41,30 @@ class PostController extends Controller
         $items->save();
 
         return redirect('admin/post');
+    }
+
+    public function EditPost(Post $post){
+        $administrator_list = Administrator::all();
+        $kategori_list = Categories::all();
+        return view('admin.edit', compact('post', 'administrator_list', 'kategori_list'));
+    }
+
+    public function UpdatePost(Post $post){
+
+          $post->update([
+            'title'         => request('title'),
+            'author'        => request('author'),
+            'slug'          => str_slug(request('title')),
+            'content'       => request('content'),
+            'type'          => request('type'),
+            'categories_id' => request('categories_id'),
+        ]);
+
+        return redirect()->route('admin.all');
+    }
+
+    public function DeletePost(Post $post){
+        $post->delete();
+        return redirect()->route('admin.all');
     }
 }

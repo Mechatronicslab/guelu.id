@@ -78,19 +78,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sidebar_section newest_videos">
+                        <div class="sidebar_section">
                             <div class="sidebar_title_container">
                                 <div class="sidebar_title">Video Terbaru</div>
                             </div>
                             <div class="sidebar_section_content">
-                              <div class="sidebar_slider_container">
-                                    <div class="owl-carousel owl-theme sidebar_slider_vid">
+                                <div class="sidebar_slider_container">
+                                    <div class="owl-carousel owl-theme sidebar_slider_top">
                                         <div class="owl-item">
                                           @foreach ($post_list->slice(0, 4) as $post_)
                                             <div class="side_post">
                                                 <a href="/post/{{ $post_->id }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-                                                        <div class="side_post_image"><div><img src="{{URL::to('/')}}/images/vid_4.jpg" alt=""></div></div>
+                                                        <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }}" alt=""></div></div>
                                                         <div class="side_post_content">
                                                             <div class="side_post_title">{{ $post_->title }}</div>
                                                             <small class="post_meta">{{ $post_->administrator->first_name }}<span>{{ $post_->created_at->formatLocalized('%a, %b %d') }}</span></small>
