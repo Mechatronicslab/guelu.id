@@ -49,15 +49,20 @@ class PostController extends Controller
         return view('admin.edit', compact('post', 'administrator_list', 'kategori_list'));
     }
 
-    public function UpdatePost(Post $post){
+    public function UpdatePost(Post $post, Request $request){
+
+          $image                = $request->file('thumbnails');
+          $filename             = time().'-'.$image->getClientOriginalName();
+          Image::make($image->getRealPath())->save(public_path('upload/posts/'.$filename));
 
           $post->update([
-            'title'         => request('title'),
-            'author'        => request('author'),
-            'slug'          => str_slug(request('title')),
-            'content'       => request('content'),
-            'type'          => request('type'),
-            'categories_id' => request('categories_id'),
+            'title'         => $request->title,
+            'thumbnails'    => $filename,
+            'author'        => $request->author,
+            'slug'          => str_slug($request->title),
+            'content'       => $request->content,
+            'type'          => $request->type,
+            'categories_id' => $request->categories_id,
         ]);
 
         return redirect()->route('admin.all');

@@ -9,6 +9,7 @@ use App\model\Categories;
 class Post extends Model
 {
     protected $post_list = 'posts';
+    protected $fillable = array('categories_id','author','thumbnails','title','slug','content','type');
 
     public function administrator(){
         return $this->belongsTo('App\model\Administrator','author','id');
