@@ -48,15 +48,15 @@
                                     <th>Jenis</th>
                                     <th><i class="fa fa-comments btn-link"></i></th>
                                     <th>Tanggal</th>
-                                    <th></th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach ($post_list as $post_)
                                 <tr>
-                                    <td>{{ $post_->title }}</td>
-                                    <td>{{ $post_->author }}</td>
-                                    <td>{{ $post_->categories_id }}</td>
+                                    <td>{{ str_limit ($post_->title, 20, ' ...') }}</td>
+                                    <td>{{ $post_->administrator->first_name }}</td>
+                                    <td>{{ $post_->categories->title }}</td>
                                     <td>
                                         <?php if ($post_->type == 1): ?>
                                             Berita
@@ -64,16 +64,22 @@
                                             Forum
                                         <?php elseif ($post_->type == 3): ?>
                                             Video Blog
+                                        <?php elseif ($post_->type == 4): ?>
+                                            Slideshow
                                         <?php endif; ?>
                                     </td>
                                     <td>
                                         <i class="fa fa-comment btn-link"></i>
                                         <span class="count">0</span>
                                     </td>
-                                    <td>{{ $post_->created_at->toDayDateTimeString() }}</td>
+                                    <td>{{ $post_->created_at->formatLocalized('%b %d %y') }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></button>
-                                        <button type="button" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
+                                        <a href="{{ route('admin.EditPost', $post_) }}" type="submit" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
+                                        <form class="slime-icon" action="{{ route('admin.DeletePost', $post_) }}" method="post">
+                                          {{ csrf_field() }}
+                                          {{ method_field('delete') }}
+                                            <button type="submit" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -82,8 +88,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

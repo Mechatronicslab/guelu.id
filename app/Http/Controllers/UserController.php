@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $post_list = Post::all();        
+        $post_list = Post::all();
         if (!Session::get('login')) {
             return redirect('login')->with('alert', 'Kamu harus login dulu');
         } else {
@@ -31,10 +31,14 @@ class UserController extends Controller
 
     public function login(){
       $post_list = Post::all();
+      $slideshow = Post::where('type', '4')->get();
+      $berita = Post::where('type', '1')->get();
+      $forum = Post::where('type', '2')->get();
+      $vlog = Post::where('type', '3')->get();
       if (Session::get('login')) {
           return redirect('admin');
       } else {
-          return view('login', compact('post_list'));
+          return view('login', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog'));
       }
     }
 
@@ -43,7 +47,7 @@ class UserController extends Controller
        $password = $request->password;
        $data = User::where('email',$email)->first();
        if(count($data) > 0){ //apakah email tersebut ada atau tidak
-           if(Hash::check($password,$data->password)){
+           if(Hash::check($password,$data->password)){             
                Session::put('name',$data->name);
                Session::put('email',$data->email);
                Session::put('login',TRUE);
@@ -60,7 +64,11 @@ class UserController extends Controller
 
    public function register(Request $request){
         $post_list = Post::all();
-        return view('register', compact('post_list'));
+        $berita = Post::where('type', '1')->get();
+        $slideshow = Post::where('type', '4')->get();
+        $forum = Post::where('type', '2')->get();
+        $vlog = Post::where('type', '3')->get();
+        return view('register', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog'));
     }
 
     public function doLogout(){

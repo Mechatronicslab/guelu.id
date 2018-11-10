@@ -36,10 +36,11 @@
                 <div class="col-xs-8 col-sm-8">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Post</strong>
+                            <strong>Edit Post</strong>
                         </div>
-                        <form method="post" action="{{ route('admin.InsertPost') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('admin.UpdatePost', $post) }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
+                        {{ method_field('patch') }}
                         <div class="card-body card-block">
                                 <div class="form-group">
                                     <label class=" form-control-label">Thumbnails</label>
@@ -47,32 +48,27 @@
                                         <input name="thumbnails" type="file" placeholder="Judul konten...">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label class=" form-control-label">Judul</label>
                                     <div class="input-group">
-                                        <input type="text" name="title" class="form-control" placeholder="Judul konten..." required>
+                                        <input type="text" name="title" class="form-control" value="{{ $post->title }}" placeholder="Judul konten..." required>
                                     </div>
                                 </div>
-
+                                @foreach ($administrator_list as $admin)
                                 <div class="form-group" hidden>
                                     <div class="input-group">
-                                      @foreach ($administrator_list as $administrator_)
-                                          <input type="text" name="author" value="{{ $administrator_->id }}" class="form-control" required>
-                                      @endforeach
+                                        <input type="text" name="author" value="{{ $admin->id }}" class="form-control" required>
                                     </div>
                                 </div>
-
+                                @endforeach
                                 <div class="form-group">
                                     <label class=" form-control-label">Konten</label>
                                     <div class="input-group">
-                                        <textarea class="form-control" name="content" id="content"></textarea>
+                                        <textarea class="form-control" name="content" id="content">{!! htmlspecialchars_decode($post->content) !!}</textarea>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                 <div class="col-xs-6 col-sm-6">
-
                                 <div class="form-group">
                                       <label class=" form-control-label">Jenis Konten</label>
                                       <div class="input-group">
@@ -81,12 +77,10 @@
                                               <option name="type" value="1">Berita</option>
                                               <option name="type" value="2">Forum</option>
                                               <option name="type" value="3">Video Blog</option>
-                                              <option name="type" value="4">Slideshow</option>
                                           </select>
                                       </div>
                                 </div>
                                 </div>
-
                                 <div class="col-xs-6 col-sm-6">
                                 <div class="form-group">
                                     <label class=" form-control-label">Kategori</label>
@@ -133,9 +127,7 @@
                             <p>Sertakan kategori untuk mempermudah penggunaan.</p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
 
         </div>

@@ -2519,3 +2519,7 @@ footer.site-footer {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.slime-icon{
+    display: inline-block;
+}
