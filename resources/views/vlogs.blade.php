@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Guelu.id | Post')
+@section('title', 'Guelu.id | Vlog')
 
 @section('content')
 
@@ -26,7 +26,13 @@
                         <div class="post_body">
                           <div class="post_title">{{ $post->title }}</div>
                           <hr>
-                            {!! htmlspecialchars_decode($post->content) !!}
+                          <div class="blog_section">
+                              <div class="videos">
+                                  <div class="player_container">
+                                      <iframe width="100%" height="100%" src="{{ $post->content }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                  </div>
+                              </div>
+                            </div>
                             <div class="post_tags">
                                 <ul>
                                     <li class="post_tag"><a href="#">{{ $post->categories->title }}</a></li>

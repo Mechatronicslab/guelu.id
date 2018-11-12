@@ -51,28 +51,16 @@
                                 <div class="section_title">Video Populer</div>
                             </div>
                             <div class="section_content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="videos">
-                                            <div class="player_container">
-                                                <div id="P1" class="player"data-property="{videoURL:'UjYemgbhJF0',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1}"></div>
-                                            </div>
-                                            <div class="playlist">
-                                                <div class="playlist_background"></div>
-                                                @foreach ($vlog->slice(0, 4) as $vlogs)
-                                                <div class="video_container video_command" onclick="jQuery('#P1').YTPChangeVideo({videoURL: 'UjYemgbhJF0', mute:false, addRaster:true})">
-                                                    <div class="video d-flex flex-row align-items-center justify-content-start">
-                                                        <div class="video_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $vlogs->thumbnails }}" alt=""></div><img class="play_img" src="{{URL::to('/')}}/images/play.png" alt=""></div>
-                                                        <div class="video_content">
-                                                            <div class="video_title">{{ $vlogs->title }}</div>
-                                                            <div class="video_info"><span>{{ $vlogs->created_at->formatLocalized('%a, %b %d') }}</span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="grid clearfix">
+                                  @foreach ($vlog->slice(0, 12) as $vlogs)
+                                  <div class="card card_default card_small_with_background grid-item">
+                                      <div class="card_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $vlogs->thumbnails }})"></div>
+                                      <div class="card-body">
+                                          <div class="card-title card-title-small"><a href="{{ route('vlog.show', $vlogs) }}">{{ $vlogs->title }}</a></div>
+                                          <small class="post_meta"><a href="#">{{ $vlogs->administrator->first_name }}</a><span>{{ $vlogs->created_at->toDayDateTimeString() }}</span></small>
+                                      </div>
+                                  </div>
+                                  @endforeach
                                 </div>
                             </div>
                         </div>
