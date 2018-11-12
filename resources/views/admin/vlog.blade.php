@@ -43,30 +43,30 @@
                         {{ csrf_field(  ) }}
                         <div class="card-body card-block">
                                 <div class="form-group">
+                                    <label class=" form-control-label">Thumbnails</label>
+                                    <div class="input-group">
+                                        <input name="thumbnails" type="file" placeholder="Judul konten...">
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class=" form-control-label">Judul</label>
                                     <div class="input-group">
-                                        <input class="form-control" name="title_" placeholder="Judul konten..." required>
+                                        <input class="form-control" name="title" placeholder="Judul konten..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class=" form-control-label">URL Embed</label>
                                     <div class="input-group">
-                                        <input class="form-control" name="content_" placeholder="URL embed..." required>
+                                        <input class="form-control" name="content" placeholder="URL embed..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group" hidden>
                                     <div class="input-group">
                                       @foreach ($administrator_list as $administrator_)
-                                          <input type="text" name="author" value="{{ $administrator_->full_name }}" class="form-control" required>
+                                          <input type="text" name="author" value="{{ $administrator_->id }}" class="form-control" required>
                                       @endforeach
-                                    </div>
-                                </div>
-
-                                <div class="form-group" hidden>
-                                    <div class="input-group">
-                                          <input type="text" name="thumbnails" value="-" class="form-control" required>
                                     </div>
                                 </div>
 
@@ -94,7 +94,7 @@
                                               @foreach ($kategori_list as $kategori_)
                                               <div class="checkbox">
                                                   <label for="categories_id" class="form-check-label ">
-                                                      <input type="checkbox" id="categories_id" name="categories_id" value="{{ $kategori_->id_ }}" class="form-check-input">{{ $kategori_->title }}
+                                                      <input type="checkbox" id="categories_id" name="categories_id" value="{{ $kategori_->id }}" class="form-check-input">{{ $kategori_->title }}
                                                   </label>
                                               </div>
                                               @endforeach
@@ -111,12 +111,8 @@
                               </div>
                         </div>
                         <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-paper-plane"></i> Tambah Postingan Baru
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-ban"></i> Reset
-                                </button>
+                            <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-paper-plane"></i> Tambah Postingan Baru</button>
+                            <button type="reset" class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Reset</button>
                         </div>
                         </form>
                     </div>

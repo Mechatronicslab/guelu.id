@@ -22,10 +22,13 @@ class UserController extends Controller
     public function index()
     {
         $post_list = Post::all();
+        $countNews = Post::where('type', '1')->count();
+        $countForum = Post::where('type', '2')->count();
+        $countVlog = Post::where('type', '3')->count();
         if (!Session::get('login')) {
             return redirect('login')->with('alert', 'Kamu harus login dulu');
         } else {
-            return view('admin/index', compact('post_list'));
+            return view('admin/index', compact('post_list', 'countNews', 'countVlog', 'countForum'));
         }
     }
 
@@ -47,7 +50,7 @@ class UserController extends Controller
        $password = $request->password;
        $data = User::where('email',$email)->first();
        if(count($data) > 0){ //apakah email tersebut ada atau tidak
-           if(Hash::check($password,$data->password)){             
+           if(Hash::check($password,$data->password)){
                Session::put('name',$data->name);
                Session::put('email',$data->email);
                Session::put('login',TRUE);

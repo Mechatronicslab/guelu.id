@@ -80,7 +80,7 @@
         <div class="home_slider_container">
             <div class="owl-carousel owl-theme home_slider">
                 @foreach ($slideshow->slice(0, 3) as $slide)
-                <div class="owl-item slider slideshow">
+                <div class="owl-item slider">
                     <div class="home_slider_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $slide->thumbnails }})"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
@@ -197,16 +197,7 @@
 <script src="{{URL::to('/')}}/js/custom.js"></script>
 
 <script type="text/javascript">
-// $(".slideshow > div:gt(0)").hide();
-//
-// setInterval(function() {
-//   $('.slideshow')
-//     .fadeOut(1000)
-//     .next()
-//     .fadeIn(1000)
-//     .end()
-//     .appendTo('.slideshow');
-// },  3000);
+
 </script>
 
 </body>

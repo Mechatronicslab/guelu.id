@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\model\Categories;
 use App\model\Post;
 use App\model\Administrator;
+use Image;
 
 class VlogController extends Controller
 {
@@ -19,17 +20,20 @@ class VlogController extends Controller
     }
 
     public function InsertVlog(Request $request){
-        $items                = new Post;
-        $items->categories_id = $request->categories_id;
-        $items->author       = $request->author;
-        $items->thumbnails   = $request->thumbnails;
-        $items->title        = $request->title;
-        $items->slug         = str_slug($request->title);
-        $items->content      = $request->content;
-        $items->type         = $request->type;
-        $items->save();
+      $items                = new Post;
+      $items->categories_id = $request->categories_id;
+      $items->author        = $request->author;
+      $image                = $request->file('thumbnails');
+      $filename             = time().'-'.$image->getClientOriginalName();
+      Image::make($image->getRealPath())->save(public_path('upload/posts/'.$filename));
+      $items->thumbnails    = $filename;
+      $items->title         = $request->title;
+      $items->slug          = str_slug($request->title);
+      $items->content       = $request->content;
+      $items->type          = $request->type;
+      $items->save();
 
-        return redirect('admin/vlog');
+      return redirect('admin/vlog');
     }
 
 }

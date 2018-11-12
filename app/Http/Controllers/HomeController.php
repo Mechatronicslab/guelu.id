@@ -99,4 +99,15 @@ class HomeController extends Controller
       $administrator_list = Administrator::all();
       return view('post', compact('post', 'post_list', 'berita', 'forum', 'vlog', 'slideshow', 'kategori_list', 'administrator_list'));
   }
+
+  public function vlogshow(Post $post){
+      $post_list = Post::orderBy('id', 'DESC')->get();
+      $kategori_list = Categories::all();
+      $berita = Post::where('type', '1')->get();
+      $forum = Post::where('type', '2')->get();
+      $vlog = Post::where('type', '3')->get();
+      $slideshow = Post::where('type', '4')->get();
+      $administrator_list = Administrator::all();
+      return view('vlogs', compact('post', 'post_list', 'berita', 'forum', 'vlog', 'slideshow', 'kategori_list', 'administrator_list'));
+  }
 }
