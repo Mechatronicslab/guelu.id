@@ -53,11 +53,16 @@ class UserController extends Controller
            if(Hash::check($password,$data->password)){
                Session::put('name',$data->name);
                Session::put('email',$data->email);
+               Session::put('level',$data->level);
                Session::put('login',TRUE);
-               return redirect('admin');
-           }
-           else{
+            if($data->level == 2){
+              return redirect('admin');
+            }else{
+              return redirect("/");
+            }
+           } else{
                return redirect('login')->with('alert','Password atau Email, Salah !'.Hash::check($password,$data->password));
+
            }
        }
        else{
