@@ -74,7 +74,13 @@
                                     </td>
                                     <td>{{ $post_->created_at->formatLocalized('%b %d %y') }}</td>
                                     <td>
-                                        <a href="{{ route('admin.EditPost', $post_) }}" type="submit" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
+                                        <?php if( $post_->type == 1): ?>
+                                            <a href="{{ route('admin.EditPost', $post_) }}" type="submit" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
+                                        <?php elseif( $post_->type  == 2): ?>
+                                            <a href="{{ route('admin.EditPost', $post_) }}" type="submit" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
+                                        <?php else: ?>
+                                            <a href="{{ route('admin.EditVlogs', $post_) }}" type="submit" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
+                                        <?php endif; ?>
                                         <form class="slime-icon" action="{{ route('admin.DeletePost', $post_) }}" method="post">
                                           {{ csrf_field() }}
                                           {{ method_field('delete') }}
