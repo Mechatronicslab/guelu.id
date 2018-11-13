@@ -32,6 +32,8 @@ Route::delete('/admin/all/{post}/delete', 'PostController@DeletePost')->name('ad
 // start vlog
 Route::get('/admin/vlog', 'VlogController@vlog')->name('admin.vlog');
 Route::post('/admin/vlog', 'VlogController@InsertVlog')->name('admin.InsertVlog');
+Route::get('/admin/vlogs/{post}', 'VlogController@EditVlogs')->name('admin.EditVlogs');
+Route::patch('/admin/vlogs/{post}', 'VlogController@UpdateVlogs')->name('admin.UpdateVlogs');
 // end vlog
 // start kategori
 Route::get('/admin/kategori', 'KategoriController@kategori')->name('admin.kategori');
