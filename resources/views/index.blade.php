@@ -93,7 +93,7 @@
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="{{ route('post.show', $beritas) }}">{{ $beritas->title }}</a>
                                                 </div>
-                                                <small class="post_meta"><a href="#">{{ $beritas->administrator->first_name }}</a><span>{{ $beritas->created_at->toDayDateTimeString() }}</span>
+                                                <small class="post_meta"><a href="#">{{ $beritas->administrator->first_name }}</a><span>{{ $beritas->created_at->formatLocalized('%a, %b %d %y') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -115,7 +115,7 @@
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="{{ route('vlog.show', $vlogs) }}">{{ $vlogs->title }}</a>
                                                 </div>
-                                                <small class="post_meta"><a href="#">{{ $vlogs->administrator->first_name }}</a><span>{{ $vlogs->created_at->toDayDateTimeString() }}</span>
+                                                <small class="post_meta"><a href="#">{{ $vlogs->administrator->first_name }}</a><span>{{ $vlogs->created_at->formatLocalized('%a, %b %d %y') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -144,7 +144,7 @@
                                                         <div class="side_post_content">
                                                             <div class="side_post_title">{{ $forums->title }}</div>
                                                             <small class="post_meta">{{ $forums->administrator->first_name }}
-                                                                <span>{{ $forums->created_at->formatLocalized('%a, %b %d') }}</span>
+                                                                <span>{{ $forums->created_at->formatLocalized('%a, %b %d') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
                                                             </small>
                                                         </div>
                                                     </div>

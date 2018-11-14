@@ -38,11 +38,11 @@
                             </div>
                             <div class="section_content">
                                 <div class="grid clearfix">
-                                    @foreach ($post_list->slice(0, 12) as $post_)
+                                    @foreach ($berita as $post_)
                                         <div class="card card_default card_small_with_background grid-item">
                                             <div class="card_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }}"></div>
                                             <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="/post/{{ $post_->id }}">{{ $post_->title }}</a></div>
+                                                <div class="card-title card-title-small"><a href="{{ route('post.show', $post_) }}">{{ $post_->title }}</a></div>
                                                 <small class="post_meta"><a href="#">{{ $post_->administrator->first_name }}</a><span>{{ $post_->created_at->toDayDateTimeString() }}</span>
                                                 </small>
                                             </div>
@@ -52,6 +52,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="paging">
+                      {{ $berita->links("pagination::bootstrap-4") }}
+                    </div>
+
                 </div>
 
                 <!-- sidebar -->

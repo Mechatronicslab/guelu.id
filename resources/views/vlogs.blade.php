@@ -31,7 +31,8 @@
                             <div class="blog_section">
                                 <div class="videos">
                                     <div class="player_container">
-                                        <iframe width="100%" height="100%" src="{{ $post->content }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe width="100%" height="100%" src="{{ $post->content }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                        </iframe>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +154,7 @@
                         <div id="load_more" class="load_more_button text-center trans_200">Load More</div>
                     </div>
                 </div>
-                
+
                 <!-- sidebar -->
                 @include('sidebar')
             </div>

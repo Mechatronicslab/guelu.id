@@ -2561,3 +2561,7 @@ label {
 	font-style: inherit;
 	font-family: unset;
 }
+
+.paging{
+	margin-top: 50px;
+}

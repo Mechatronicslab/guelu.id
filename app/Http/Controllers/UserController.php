@@ -96,6 +96,7 @@ class UserController extends Controller
             'email' => 'required|min:4|email|unique:users',
             'username' => 'required|min:4',
             'password' => 'required',
+            'level' => 'required',
             'verifi_password' => 'required|same:password',
         ]);
         $data = new User();
@@ -104,6 +105,7 @@ class UserController extends Controller
         $data->full_name = $request->nama_lengkap;
         $data->email = $request->email;
         $data->username = $request->username;
+        $data->level = $request->level;
         $data->password = bcrypt($request->password);
         $data->save();
         return redirect('login')->with('alert-success', 'Kamu berhasil Register');

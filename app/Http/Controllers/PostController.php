@@ -17,7 +17,7 @@ class PostController extends Controller
 
     public function all()
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
+        $post_list = Post::latest()->orderBy('id', 'DESC')->get();
         return view('admin.all', compact('post_list'));
     }
 

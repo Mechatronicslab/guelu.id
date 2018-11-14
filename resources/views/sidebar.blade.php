@@ -15,7 +15,7 @@
                             <!-- Sidebar Post -->
                             @foreach ($berita->slice(0, 4) as $beritas)
                             <div class="side_post">
-                                <a href="/post/{{ $beritas->id }}">
+                                <a href="{{ route('post.show', $beritas) }}">
                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                         <div class="side_post_image">
                                             <div><img src="{{URL::to('/')}}/upload/posts/{{ $beritas->thumbnails }}" alt=""></div>
@@ -48,7 +48,7 @@
                             <!-- Newest Videos Post -->
                             @foreach ($vlog->slice(0, 4) as $vlogs)
                             <div class="side_post">
-                                <a href="/post/{{ $vlogs->id }}">
+                                <a href="{{ route('vlog.show', $vlogs) }}">
                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                         <div class="side_post_image">
                                             <div><img src="{{URL::to('/')}}/upload/posts/{{ $vlogs->thumbnails }}" alt=""></div>

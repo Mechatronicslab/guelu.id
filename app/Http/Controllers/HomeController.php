@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         $post_list = Post::orderBy('id', 'DESC')->get();
         $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->get();
+        $berita = Post::where('type', '1')->paginate(15);
         $forum = Post::where('type', '2')->get();
         $vlog = Post::where('type', '3')->get();
         $slideshow = Post::where('type', '4')->get();
@@ -44,7 +44,7 @@ class HomeController extends Controller
         $kategori_list = Categories::all();
         $berita = Post::where('type', '1')->get();
         $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->get();
+        $vlog = Post::where('type', '3')->paginate(15);
         $slideshow = Post::where('type', '4')->get();
         $administrator_list = Administrator::all();
         return view('vlog', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', 'kategori_list', 'administrator_list'));

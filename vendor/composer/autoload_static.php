@@ -82,6 +82,7 @@ class ComposerStaticInit2d73b751602ce2e2ed41abced5aff69f
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'Landish\\Pagination\\' => 19,
         ),
         'J' => 
         array (
@@ -257,6 +258,10 @@ class ComposerStaticInit2d73b751602ce2e2ed41abced5aff69f
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Landish\\Pagination\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/landish/pagination/src',
         ),
         'JakubOnderka\\PhpConsoleColor\\' => 
         array (
@@ -1948,6 +1953,17 @@ class ComposerStaticInit2d73b751602ce2e2ed41abced5aff69f
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
+        'Landish\\Pagination\\Materialize' => __DIR__ . '/..' . '/landish/pagination/src/Materialize.php',
+        'Landish\\Pagination\\Pagination' => __DIR__ . '/..' . '/landish/pagination/src/Pagination.php',
+        'Landish\\Pagination\\PaginationHTML' => __DIR__ . '/..' . '/landish/pagination/src/PaginationHTML.php',
+        'Landish\\Pagination\\SemanticUI' => __DIR__ . '/..' . '/landish/pagination/src/SemanticUI.php',
+        'Landish\\Pagination\\Simple\\Materialize' => __DIR__ . '/..' . '/landish/pagination/src/Simple/Materialize.php',
+        'Landish\\Pagination\\Simple\\Pagination' => __DIR__ . '/..' . '/landish/pagination/src/Simple/Pagination.php',
+        'Landish\\Pagination\\Simple\\SemanticUI' => __DIR__ . '/..' . '/landish/pagination/src/Simple/SemanticUI.php',
+        'Landish\\Pagination\\Simple\\UIKit' => __DIR__ . '/..' . '/landish/pagination/src/Simple/UIKit.php',
+        'Landish\\Pagination\\Simple\\ZurbFoundation' => __DIR__ . '/..' . '/landish/pagination/src/Simple/ZurbFoundation.php',
+        'Landish\\Pagination\\UIKit' => __DIR__ . '/..' . '/landish/pagination/src/UIKit.php',
+        'Landish\\Pagination\\ZurbFoundation' => __DIR__ . '/..' . '/landish/pagination/src/ZurbFoundation.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
