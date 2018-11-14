@@ -21,7 +21,7 @@
                                 <div class="section_title">Login</div>
                             </div>
 
-                              <div class="home_content">
+                              <div class="home_contents">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-11">
