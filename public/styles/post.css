@@ -54,14 +54,7 @@ body
 	background: #f7f7f7;
 	color: #a5a5a5;
 }
-div
-{
-	display: block;
-	position: relative;
-	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+
 ul
 {
 	list-style: none;
@@ -230,7 +223,7 @@ section
 }
 .parallax-window
 {
-    min-height: 400px;
+    min-height: 100px;
     background: transparent;
 }
 .nopadding
@@ -309,7 +302,6 @@ section
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 14px;
 	font-weight: 700;
-	color: rgba(255,255,255,0.5);
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -643,7 +635,7 @@ section
 {
 	color: rgba(0,0,0,0.8);
 }
-.post_title
+.post_title_color
 {
 	font-size: 24px;
 	color: #FFFFFF;

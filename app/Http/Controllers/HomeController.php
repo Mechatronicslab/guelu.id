@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Redirect;
 use App\model\Categories;
 use App\model\Post;
 use App\model\Administrator;
+use Session;
 
 class HomeController extends Controller
 {
+
   public function index(){
       $post_list = Post::orderBy('id', 'DESC')->get();
       $kategori_list = Categories::all();
