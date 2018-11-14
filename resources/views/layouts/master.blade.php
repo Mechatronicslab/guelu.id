@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{URL::to('/')}}/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="{{URL::to('/')}}/plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
     <link rel="stylesheet" type="text/css" href="{{URL::to('/')}}/styles/main_styles.css">
+
 </head>
 <body>
 
@@ -142,6 +143,8 @@
 <script src="{{URL::to('/')}}/plugins/masonry/masonry.js"></script>
 <script src="{{URL::to('/')}}/plugins/masonry/images_loaded.js"></script>
 <script src="{{URL::to('/')}}/js/custom.js"></script>
+<script src="{{URL::to('/')}}/plugins/parallax-js-master/parallax.min.js"></script>
+
 
 <script type="text/javascript">
 

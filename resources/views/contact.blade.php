@@ -4,6 +4,7 @@
 
 @section('content')
 
+@include('header')
     <div class="page_content">
         <div class="container">
             <div class="row row-lg-eq-height">
