@@ -65,6 +65,9 @@ ul
 	list-style: none;
 	margin-bottom: 0px;
 }
+.image_avatar img{
+    border-radius: 50%;
+}
 p
 {
 	font-family: 'Work Sans', sans-serif;
