@@ -33,7 +33,9 @@
                                 <li><a href="{{ route('berita') }}">Berita</a></li>
                                 <li><a href="{{ route('vlog') }}">Video Blog</a></li>
                                 <li><a href="{{ route('forum') }}">Forum</a></li>
-                                @if(Session::get("level") == 2)
+                                @if(Session::get("level") == 1)
+                                <li><a href="{{ route('login') }}">New Story</a></li>
+                                @elseif(Session::get("level")==2)
                                 <li><a href="{{ route('admin') }}">Administrator</a></li>
                                 @else
                                 <li><a href="{{ route('about') }}">Tentang Kami</a></li>

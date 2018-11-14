@@ -32,45 +32,47 @@ class UserController extends Controller
         }
     }
 
-    public function login(){
-      $post_list = Post::all();
-      $slideshow = Post::where('type', '4')->get();
-      $berita = Post::where('type', '1')->get();
-      $forum = Post::where('type', '2')->get();
-      $vlog = Post::where('type', '3')->get();
-      if (Session::get('login')) {
-          return redirect('admin');
-      } else {
-          return view('login', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog'));
-      }
+    public function login()
+    {
+        $post_list = Post::all();
+        $slideshow = Post::where('type', '4')->get();
+        $berita = Post::where('type', '1')->get();
+        $forum = Post::where('type', '2')->get();
+        $vlog = Post::where('type', '3')->get();
+        if (Session::get('login')) {
+            return redirect('admin');
+        } else {
+            return view('login', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog'));
+        }
     }
 
-    public function doLogin(Request $request){
-       $email = $request->email;
-       $password = $request->password;
-       $data = User::where('email',$email)->first();
-       if(count($data) > 0){ //apakah email tersebut ada atau tidak
-           if(Hash::check($password,$data->password)){
-               Session::put('name',$data->name);
-               Session::put('email',$data->email);
-               Session::put('level',$data->level);
-               Session::put('login',TRUE);
-            if($data->level == 2){
-              return redirect('admin');
-            }else{
-              return redirect("/");
+    public function doLogin(Request $request)
+    {
+        $email = $request->email;
+        $password = $request->password;
+        $data = User::where('email', $email)->first();
+        if (count($data) > 0) { //apakah email tersebut ada atau tidak
+            if (Hash::check($password, $data->password)) {
+                Session::put('name', $data->name);
+                Session::put('email', $data->email);
+                Session::put('level', $data->level);
+                Session::put('login', TRUE);
+                if ($data->level == 2) {
+                    return redirect('admin');
+                } else {
+                    return redirect("/");
+                }
+            } else {
+                return redirect('login')->with('alert', 'Password atau Email, Salah !' . Hash::check($password, $data->password));
+
             }
-           } else{
-               return redirect('login')->with('alert','Password atau Email, Salah !'.Hash::check($password,$data->password));
+        } else {
+            return redirect('login')->with('alert', 'Password atau Email, Salah!');
+        }
+    }
 
-           }
-       }
-       else{
-           return redirect('login')->with('alert','Password atau Email, Salah!');
-       }
-   }
-
-   public function register(Request $request){
+    public function register(Request $request)
+    {
         $post_list = Post::all();
         $berita = Post::where('type', '1')->get();
         $slideshow = Post::where('type', '4')->get();
@@ -79,12 +81,14 @@ class UserController extends Controller
         return view('register', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog'));
     }
 
-    public function doLogout(){
-      Session::flush();
-      return redirect('login')->with('alert','Kamu sudah logout');
-   }
+    public function doLogout()
+    {
+        Session::flush();
+        return redirect('login')->with('alert', 'Kamu sudah logout');
+    }
 
-    public function doRegister(Request $request){
+    public function doRegister(Request $request)
+    {
         $this->validate($request, [
             'nama_depan' => 'required|min:4',
             'nama_blkg' => 'required|min:4',
@@ -94,14 +98,14 @@ class UserController extends Controller
             'password' => 'required',
             'verifi_password' => 'required|same:password',
         ]);
-        $data =  new User();
+        $data = new User();
         $data->first_name = $request->nama_depan;
         $data->last_name = $request->nama_blkg;
         $data->full_name = $request->nama_lengkap;
-        $data->email= $request->email;
-        $data->username= $request->username;
-        $data->password= bcrypt($request->password);
+        $data->email = $request->email;
+        $data->username = $request->username;
+        $data->password = bcrypt($request->password);
         $data->save();
-        return redirect('login')->with('alert-success','Kamu berhasil Register');
+        return redirect('login')->with('alert-success', 'Kamu berhasil Register');
     }
 }
