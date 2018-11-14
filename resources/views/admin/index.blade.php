@@ -90,16 +90,16 @@
                         </div>
                         <div class="card-body--">
                             <div class="table-stats order-table ov-h">
-                              <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                  <thead>
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
                                     <tr>
                                         <th class="avatar">Avatar</th>
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Status</th>
                                     </tr>
-                                  </thead>
-                                  <tbody>
+                                    </thead>
+                                    <tbody>
                                     <tr>
                                         <td class="avatar">
                                             <div class="round-img">
@@ -110,48 +110,8 @@
                                         <td><span class="name">Louis Stanley</span></td>
                                         <td><span class="product">New Member</span></td>
                                     </tr>
-                                    <tr>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/2.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #5468</td>
-                                        <td><span class="name">Gregory Dixon</span></td>
-                                        <td><span class="product">New Member</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/3.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #5467</td>
-                                        <td><span class="name">Catherine Dixon</span></td>
-                                        <td><span class="product">New Member</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/4.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #5466</td>
-                                        <td><span class="name">Mary Silva</span></td>
-                                        <td><span class="product">New Member</span></td>
-                                    </tr>
-                                    <tr class=" pb-0">
-                                        <td class="avatar pb-0">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/6.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #5465</td>
-                                        <td><span class="name">Johnny Stephens</span></td>
-                                        <td><span class="product">New Member</span></td>
-                                    </tr>
-                                  </tbody>
-                              </table>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -211,7 +171,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 @endsection

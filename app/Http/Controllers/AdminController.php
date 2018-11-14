@@ -13,7 +13,8 @@ use App\model\Administrator;
 class AdminController extends Controller
 {
 
-    public function index(){
+    public function index()
+    {
         return view('admin/index');
     }
 

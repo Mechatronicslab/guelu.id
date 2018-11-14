@@ -4,7 +4,7 @@
 
 @section('content')
 
-@include('header')
+    @include('header')
     <div class="page_content">
         <div class="container">
             <div class="row row-lg-eq-height">
@@ -14,25 +14,26 @@
                             <div class="author_image">
                                 <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
                             </div>
-                            <div class="post_meta"><a href="#">{{ $post->administrator->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span></div>
+                            <div class="post_meta"><a href="#">{{ $post->administrator->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
+                            </div>
                             <div class="post_share ml-sm-auto">
                                 <span>share</span>
                                 <ul class="post_share_list">
-                                    <li class="post_share_item"><a href="#"><i class="fa fa-facebook"aria-hidden="true"></i></a></li>
-                                    <li class="post_share_item"><a href="#"><i class="fa fa-twitter"aria-hidden="true"></i></a></li>
-                                    <li class="post_share_item"><a href="#"><i class="fa fa-google"aria-hidden="true"></i></a></li>
+                                    <li class="post_share_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li class="post_share_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li class="post_share_item"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="post_body">
-                          <div class="post_title">{{ $post->title }}</div>
-                          <hr>
-                          <div class="blog_section">
-                              <div class="videos">
-                                  <div class="player_container">
-                                      <iframe width="100%" height="100%" src="{{ $post->content }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                  </div>
-                              </div>
+                            <div class="post_title">{{ $post->title }}</div>
+                            <hr>
+                            <div class="blog_section">
+                                <div class="videos">
+                                    <div class="player_container">
+                                        <iframe width="100%" height="100%" src="{{ $post->content }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
                             </div>
                             <div class="post_tags">
                                 <ul>
@@ -45,16 +46,14 @@
                             <div class="author_image">
                                 <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
                             </div>
-                            <div class="post_meta"><a href="#">{{ $post->administrator->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span></div>
+                            <div class="post_meta"><a href="#">{{ $post->administrator->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
+                            </div>
                             <div class="post_share ml-sm-auto">
                                 <span>share</span>
                                 <ul class="post_share_list">
-                                    <li class="post_share_item"><a href="#"><i class="fa fa-facebook"
-                                                                               aria-hidden="true"></i></a></li>
-                                    <li class="post_share_item"><a href="#"><i class="fa fa-twitter"
-                                                                               aria-hidden="true"></i></a></li>
-                                    <li class="post_share_item"><a href="#"><i class="fa fa-google"
-                                                                               aria-hidden="true"></i></a></li>
+                                    <li class="post_share_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li class="post_share_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li class="post_share_item"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -65,12 +64,9 @@
                                     <div class="col-xl-12">
                                         <div class="post_comment_form_container">
                                             <form action="#">
-                                                <input type="text" class="comment_input comment_input_name"
-                                                       placeholder="Your Name" required="required">
-                                                <input type="email" class="comment_input comment_input_email"
-                                                       placeholder="Your Email" required="required">
-                                                <textarea class="comment_text" placeholder="Your Comment"
-                                                          required="required"></textarea>
+                                                <input type="text" class="comment_input comment_input_name" placeholder="Your Name" required="required">
+                                                <input type="email" class="comment_input comment_input_email" placeholder="Your Email" required="required">
+                                                <textarea class="comment_text" placeholder="Your Comment" required="required"></textarea>
                                                 <button type="submit" class="comment_button">Post Comment</button>
                                             </form>
                                         </div>
@@ -88,8 +84,8 @@
                                                         <div class="comment_panel d-flex flex-row align-items-center justify-content-start">
                                                             <div class="comment_author_image">
                                                                 <div>
-                                                                    <img src="{{URL::to('/')}}/images/comment_author_1.jpg"
-                                                                         alt=""></div>
+                                                                    <img src="{{URL::to('/')}}/images/comment_author_1.jpg" alt="">
+                                                                </div>
                                                             </div>
                                                             <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span>
                                                             </small>
@@ -108,15 +104,10 @@
                                                                 <div class="comment_panel d-flex flex-row align-items-center justify-content-start">
                                                                     <div class="comment_author_image">
                                                                         <div>
-                                                                            <img src="{{URL::to('/')}}/images/comment_author_2.jpg"
-                                                                                 alt=""></div>
+                                                                            <img src="{{URL::to('/')}}/images/comment_author_2.jpg" alt=""></div>
                                                                     </div>
-                                                                    <small class="post_meta"><a href="#">Katy
-                                                                            Liu</a><span>Sep 29, 2017 at 9:48 am</span>
-                                                                    </small>
-                                                                    <button type="button" class="reply_button ml-auto">
-                                                                        Reply
-                                                                    </button>
+                                                                    <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+                                                                    <button type="button" class="reply_button ml-auto">Reply</button>
                                                                 </div>
                                                                 <div class="comment_content">
                                                                     <p>Nulla facilisi. Aenean porttitor quis tortor id
@@ -136,8 +127,8 @@
                                                         <div class="comment_panel d-flex flex-row align-items-center justify-content-start">
                                                             <div class="comment_author_image">
                                                                 <div>
-                                                                    <img src="{{URL::to('/')}}/images/comment_author_1.jpg"
-                                                                         alt=""></div>
+                                                                    <img src="{{URL::to('/')}}/images/comment_author_1.jpg" alt="">
+                                                                </div>
                                                             </div>
                                                             <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span>
                                                             </small>
@@ -162,63 +153,9 @@
                         <div id="load_more" class="load_more_button text-center trans_200">Load More</div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="sidebar">
-                        <div class="sidebar_background"></div>
-                        <div class="sidebar_section">
-                            <div class="sidebar_title_container">
-                                <div class="sidebar_title">Berita Teratas</div>
-                            </div>
-                            <div class="sidebar_section_content">
-                                <div class="sidebar_slider_container">
-                                    <div class="owl-carousel owl-theme sidebar_slider_top">
-                                        <div class="owl-item">
-                                          @foreach ($berita->slice(0, 4) as $beritas)
-                                            <div class="side_post">
-                                                <a href="/post/{{ $beritas->id }}">
-                                                    <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-                                                        <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $beritas->thumbnails }}" alt=""></div></div>
-                                                        <div class="side_post_content">
-                                                            <div class="side_post_title">{{ $beritas->title }}</div>
-                                                            <small class="post_meta">{{ $beritas->administrator->first_name }}<span>{{ $beritas->created_at->formatLocalized('%a, %b %d') }}</span></small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar_section">
-                            <div class="sidebar_title_container">
-                                <div class="sidebar_title">Video Terbaru</div>
-                            </div>
-                            <div class="sidebar_section_content">
-                                <div class="sidebar_slider_container">
-                                    <div class="owl-carousel owl-theme sidebar_slider_top">
-                                        <div class="owl-item">
-                                          @foreach ($vlog->slice(0, 4) as $vlogs)
-                                            <div class="side_post">
-                                                <a href="/post/{{ $vlogs->id }}">
-                                                    <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-                                                        <div class="side_post_image"><div><img src="{{URL::to('/')}}/upload/posts/{{ $vlogs->thumbnails }}" alt=""></div></div>
-                                                        <div class="side_post_content">
-                                                            <div class="side_post_title">{{ $vlogs->title }}</div>
-                                                            <small class="post_meta">{{ $vlogs->administrator->first_name }}<span>{{ $vlogs->created_at->formatLocalized('%a, %b %d') }}</span></small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                <!-- sidebar -->
+                @include('sidebar')
             </div>
         </div>
     </div>

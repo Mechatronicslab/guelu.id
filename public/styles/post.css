@@ -259,7 +259,7 @@ section
 }
 .header.scrolled
 {
-	background: rgba(0,0,0,0.75);
+	background: rgba(251, 127, 127, 0.8);
 	box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
 }
 .header.scrolled .header_content
@@ -311,7 +311,7 @@ section
 .main_nav ul li a:hover,
 .main_nav ul li.active a
 {
-	color: rgba(255,255,255,1);
+	color: rgb(237, 81, 81);
 }
 
 /*********************************
@@ -348,7 +348,7 @@ section
 	display: inline-block;
 	width: 262px;
 	height: 46px;
-	background: rgba(255,255,255,0.2);
+	background: rgba(255, 0, 0, 0.24);
 	border: none;
 	outline: none;
 	border-radius: 5px;
@@ -1451,7 +1451,7 @@ section
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 18px;
 	font-weight: 700;
-	color: #000000;
+	color: #d23333;
 }
 .sidebar_section_content
 {
@@ -1657,7 +1657,7 @@ section
 .footer
 {
 	width: 100%;
-	background: #1f1f1f;
+	background: #fd3131;
 }
 .footer_content
 {
@@ -1720,7 +1720,7 @@ section
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 12px;
 	font-weight: 500;
-	color: rgba(255,255,255,0.1);
+	color: rgba(255,255,255,0.7);
 	margin-top: 40px;
 }
 .subscribe
@@ -1735,7 +1735,7 @@ section
 	left: 0;
 	width: 375px;
 	height: 100%;
-	background: #111111;
+	background: #ff4b4b;
 }
 .subscribe_content
 {

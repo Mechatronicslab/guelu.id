@@ -53,41 +53,41 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($post_list as $post_)
-                                <tr>
-                                    <td>{{ str_limit ($post_->title, 20, ' ...') }}</td>
-                                    <td>{{ $post_->administrator->first_name }}</td>
-                                    <td>{{ $post_->categories->title }}</td>
-                                    <td>
-                                        <?php if ($post_->type == 1): ?>
+                                    <tr>
+                                        <td>{{ str_limit ($post_->title, 20, ' ...') }}</td>
+                                        <td>{{ $post_->administrator->first_name }}</td>
+                                        <td>{{ $post_->categories->title }}</td>
+                                        <td>
+                                            <?php if ($post_->type == 1): ?>
                                             Berita
-                                        <?php elseif ($post_->type == 2): ?>
+                                            <?php elseif ($post_->type == 2): ?>
                                             Forum
-                                        <?php elseif ($post_->type == 3): ?>
+                                            <?php elseif ($post_->type == 3): ?>
                                             Video Blog
-                                        <?php elseif ($post_->type == 4): ?>
+                                            <?php elseif ($post_->type == 4): ?>
                                             Slideshow
-                                        <?php endif; ?>
-                                    </td>
-                                    <td>
-                                        <i class="fa fa-comment btn-link"></i>
-                                        <span class="count">0</span>
-                                    </td>
-                                    <td>{{ $post_->created_at->formatLocalized('%b %d %y') }}</td>
-                                    <td>
-                                        <?php if( $post_->type == 1): ?>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <i class="fa fa-comment btn-link"></i>
+                                            <span class="count">0</span>
+                                        </td>
+                                        <td>{{ $post_->created_at->formatLocalized('%b %d %y') }}</td>
+                                        <td>
+                                            <?php if( $post_->type == 1): ?>
                                             <a href="{{ route('admin.EditPost', $post_) }}" type="submit" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
-                                        <?php elseif( $post_->type  == 2): ?>
+                                            <?php elseif( $post_->type == 2): ?>
                                             <a href="{{ route('admin.EditPost', $post_) }}" type="submit" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
-                                        <?php else: ?>
+                                            <?php else: ?>
                                             <a href="{{ route('admin.EditVlogs', $post_) }}" type="submit" class="btn btn-link btn-sm"><i class="fa fa-pencil"></i></a>
-                                        <?php endif; ?>
-                                        <form class="slime-icon" action="{{ route('admin.DeletePost', $post_) }}" method="post">
-                                          {{ csrf_field() }}
-                                          {{ method_field('delete') }}
-                                            <button type="submit" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                            <?php endif; ?>
+                                            <form class="slime-icon" action="{{ route('admin.DeletePost', $post_) }}" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('delete') }}
+                                                <button type="submit" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 </tbody>
                             </table>

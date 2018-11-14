@@ -10,20 +10,23 @@ use App\model\Categories;
 
 class KategoriController extends Controller
 {
-    public function kategori(){
+    public function kategori()
+    {
         $kategori_list = Categories::all();
         return view('admin.kategori', compact('kategori_list'));
     }
 
-    public function in_kategori(){
+    public function in_kategori()
+    {
         return view('admin.kategori.in_kategori');
     }
 
-    public function InsertKategori(Request $request){
-        $items          = new Categories;
-        $items->title  = $request->title;
-        $items->slug   = $request->slug;
-        $items->desc   = $request->desc;
+    public function InsertKategori(Request $request)
+    {
+        $items = new Categories;
+        $items->title = $request->title;
+        $items->slug = $request->slug;
+        $items->desc = $request->desc;
         $items->save();
 
         return redirect('admin/kategori');
