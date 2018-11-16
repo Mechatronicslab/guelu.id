@@ -33,9 +33,9 @@
                                                             <div>{{Session::get('alert-success')}}</div>
                                                         </div>
                                                     @endif
-                                                    <form action="{{ url('/doLogin') }}" method="post">
+                                                    <form action="{{ route('doLogin') }}" method="post">
                                                         {{ csrf_field() }}
-                                                        <input id="email" name="email" type="text" class="contact_text" placeholder="Username / Email" required="required">
+                                                        <input id="email" name="email" type="text" class="contact_text" placeholder="Email" required="required">
                                                         <input id="password" name="password" type="password" class="contact_text" placeholder="Password" required="required">
                                                         <button type="submit" class="contact_button">Login</button>
                                                     </form>

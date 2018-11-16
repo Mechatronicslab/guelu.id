@@ -108,8 +108,10 @@
                                 </div>
                             </div>
                         </div>
+                      </header>
                 </div>
             </div>
+        </div>
     </header>
 
     @yield('content')

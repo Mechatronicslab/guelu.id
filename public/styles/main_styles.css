@@ -2545,7 +2545,7 @@ label {
 	/* Style as you please, it will become the visible UI component. */
 }
 
-#upload-photo {
+#photos {
 	opacity: 0;
 	position: absolute;
 	z-index: -1;
@@ -2564,4 +2564,130 @@ label {
 
 .paging{
 	margin-top: 50px;
+}
+
+.side_post_user div
+{
+	width: 42px;
+	height: 37px;
+}
+.side_post_user div img
+{
+	max-width: 100%;
+	border-radius: 30px;
+	height: 40px;
+}
+
+.newest_videos .side_post_user div
+{
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.user_bar{
+	margin-right: -40px;
+}
+
+.section_panel_user{
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 0;
+	width: 55px;
+}
+
+.section_panel_user ul li
+{
+	position: relative;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	color: rgba(0,0,0,0.4);
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+}
+.section_panel_user ul li a
+{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	color: rgba(0,0,0,0.4);
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+}
+.section_panel_user > ul > li
+{
+	padding-right: 20px;
+	cursor: default;
+	padding-top: 22px;
+	padding-bottom: 22px;
+}
+.section_panel_user > ul > li::after
+{
+	display: block;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 0;
+	font-family: 'FontAwesome';
+	content: '\f107';
+}
+.section_panel_user > ul > li > ul
+{
+	position: absolute;
+	top: 70px;
+	right: 0;
+	padding-top: 23px;
+	padding-left: 29px;
+	padding-right: 60px;
+	padding-bottom: 23px;
+	background: #FFFFFF;
+	box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.section_panel_user > ul > li:hover > ul
+{
+	visibility: visible;
+	opacity: 1;
+}
+.section_panel_user > ul > li:hover::after
+{
+	content: '\f106';
+}
+.section_panel_user > ul > li > ul li:not(:last-child)
+{
+	margin-bottom: 10px;
+}
+.section_panel_user > ul > li > ul li a
+{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	color: rgba(0,0,0,0.4);
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+	white-space: nowrap;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.section_panel_user > ul > li > ul li a:hover
+{
+	color: rgba(0,0,0,0.8);
 }

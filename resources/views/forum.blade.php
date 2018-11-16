@@ -23,19 +23,19 @@
                                         <!-- Future Events Slider Item -->
                                         <div class="owl-item">
                                             <!-- Future Events Post -->
-                                            @foreach ($forum->slice(0, 12) as $forums)
+                                            @foreach ($forums->slice(0, 12) as $forum)
                                             <div class="side_post">
                                                 <a href="/post">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                                         <div class="event_date d-flex flex-column align-items-center justify-content-center">
-                                                            <div class="event_day">{{ $forums->created_at->formatLocalized('%d') }}</div>
-                                                            <div class="event_month">{{ $forums->created_at->formatLocalized('%b') }}</div>
+                                                            <div class="event_day">{{ $forum->created_at->formatLocalized('%d') }}</div>
+                                                            <div class="event_month">{{ $forum->created_at->formatLocalized('%b') }}</div>
                                                         </div>
                                                         <div class="side_post_content">
-                                                            <div class="side_post_title">{{ $forums->title }}
+                                                            <div class="side_post_title">{{ $forum->title }}
                                                             </div>
-                                                            <small class="post_meta">{{ $forums->administrator->first_name }}
-                                                                <span>{{ $forums->created_at->formatLocalized('%a, %b %d') }}</span>
+                                                            <small class="post_meta">{{ $forum->user->first_name }}
+                                                                <span>{{ $forum->created_at->formatLocalized('%a, %b %d') }}</span>
                                                             </small>
                                                         </div>
                                                     </div>

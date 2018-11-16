@@ -13,7 +13,7 @@
                         <!-- Top Stories Slider Item -->
                         <div class="owl-item">
                             <!-- Sidebar Post -->
-                            @foreach ($berita->slice(0, 4) as $beritas)
+                            @foreach ($side_one->slice(0, 4) as $beritas)
                             <div class="side_post">
                                 <a href="{{ route('post.show', $beritas) }}">
                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -22,7 +22,7 @@
                                         </div>
                                         <div class="side_post_content">
                                             <div class="side_post_title">{{ $beritas->title }}</div>
-                                            <small class="post_meta">{{ $beritas->administrator->first_name }}<span>{{ $beritas->created_at->formatLocalized('%a, %b %d') }}</span></small>
+                                            <small class="post_meta">{{ $beritas->user->first_name }}<span>{{ $beritas->created_at->formatLocalized('%a, %b %d') }}</span></small>
                                         </div>
                                     </div>
                                 </a>
@@ -46,7 +46,7 @@
                         <!-- Newest Videos Slider Item -->
                         <div class="owl-item">
                             <!-- Newest Videos Post -->
-                            @foreach ($vlog->slice(0, 4) as $vlogs)
+                            @foreach ($side_two->slice(0, 4) as $vlogs)
                             <div class="side_post">
                                 <a href="{{ route('vlog.show', $vlogs) }}">
                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="side_post_content">
                                             <div class="side_post_title">{{ $vlogs->title }}</div>
-                                            <small class="post_meta">{{ $vlogs->administrator->first_name }}<span>{{ $vlogs->created_at->formatLocalized('%a, %b %d') }}</span></small>
+                                            <small class="post_meta">{{ $vlogs->user->first_name }}<span>{{ $vlogs->created_at->formatLocalized('%a, %b %d') }}</span></small>
                                         </div>
                                     </div>
                                 </a>

@@ -16,8 +16,8 @@
                                 <div class="section_tags ml-auto">
                                     <ul>
                                         <li class="active"><a href="#">semua</a></li>
-                                        @foreach ($kategori_list->slice(0, 4) as $kategori_)
-                                            <li><a href="/berita/{{ $kategori_->slug }}">{{ $kategori_->title }}</a>
+                                        @foreach ($kategoris->slice(0, 4) as $kategori)
+                                            <li><a href="/berita/{{ $kategori->slug }}">{{ $kategori->title }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -26,9 +26,9 @@
                                     <ul>
                                         <li>more
                                             <ul>
-                                                @foreach ($kategori_list->slice(4, 10) as $kategori_)
+                                                @foreach ($kategoris->slice(4, 10) as $kategori)
                                                     <li>
-                                                        <a href="/berita/{{ $kategori_->slug }}">{{ $kategori_->title }}</a>
+                                                        <a href="/berita/{{ $kategori->slug }}">{{ $kategori->title }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -38,12 +38,12 @@
                             </div>
                             <div class="section_content">
                                 <div class="grid clearfix">
-                                    @foreach ($vlog as $post_)
+                                    @foreach ($vlogs as $vlog)
                                         <div class="card card_default card_small_with_background grid-item">
-                                            <div class="card_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $post_->thumbnails }})"></div>
+                                            <div class="card_background" style="background-image:url({{URL::to('/')}}/upload/posts/{{ $vlog->thumbnails }})"></div>
                                             <div class="card-body">
-                                                <div class="card-title card-title-small"><a href="{{ route('vlog.show', $post_) }}">{{ $post_->title }}</a></div>
-                                                <small class="post_meta"><a href="#">{{ $post_->administrator->first_name }}</a><span>{{ $post_->created_at->toDayDateTimeString() }}</span></small>
+                                                <div class="card-title card-title-small"><a href="{{ route('vlog.show', $vlog) }}">{{ $vlog->title }}</a></div>
+                                                <small class="post_meta"><a href="#">{{ $vlog->user->first_name }}</a><span>{{ $vlog->created_at->toDayDateTimeString() }}</span></small>
                                             </div>
                                         </div>
                                     @endforeach
@@ -51,9 +51,9 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="paging">
-                      {{ $vlog->links("pagination::bootstrap-4") }}
+                      {{ $vlogs->links("pagination::bootstrap-4") }}
                     </div>
                 </div>
 

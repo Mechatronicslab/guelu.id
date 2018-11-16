@@ -32,20 +32,18 @@
                                                     </ul>
                                                   </div>
                                                   @endif
-                                                  <form action="{{ url('/doRegister') }}" method="post">
+                                                  <form action="{{ route('doRegister') }}" method="post" enctype="multipart/form-data">
                                                     {{ csrf_field() }}
-                                                    <input name="nama_depan" id="nama_depan" type="text" class="contact_input contact_input_name" placeholder="Nama depan" required="required">
-                                                    <input name="nama_blkg" id="nama_blkg" type="text" class="contact_input contact_input_name" placeholder="Nama belakang" required="required">
-                                                    <input name="nama_lengkap" id="nama_lengkap" type="text" class="contact_text" placeholder="Nama lengkap" required="required">
+                                                    <input name="first_name" id="first_name" type="text" class="contact_input contact_input_name" placeholder="Nama depan" required="required">
+                                                    <input name="last_name" id="last_name" type="text" class="contact_input contact_input_name" placeholder="Nama belakang" required="required">
+                                                    <input name="full_name" id="full_name" type="text" class="contact_text" placeholder="Nama lengkap" required="required">
                                                     <input name="email" id="email" type="text" class="contact_text" placeholder="Alamat email" required="required">
                                                     <input name="username" id="username" type="text" class="contact_text" placeholder="Username" required="required">
                                                     <input name="password" id="password" type="password" class="contact_text" placeholder="Password" required="required">
-                                                    <input name="level" id="level" type="text" class="contact_text" placeholder="Password" required="required" value="1" hidden>
                                                     <input name="verifi_password" id="verifi_password" type="password" class="contact_text" placeholder="Konfirmasi password" required="required">
-                                                    <label disabled hidden for="upload-photo" class="file">Foto profil</label>
-                                                    <input type="file" name="photo" id="upload-photo" disabled hidden/>
-                                                    <button type="submit" class="contact_button">Daftar Sekarang
-                                                    </button>
+                                                    <label for="photos" class="file" required>Foto profil</label>
+                                                    <input type="file" name="photos" id="photos" required>
+                                                    <button type="submit" class="contact_button">Daftar Sekarang</button>
                                                   </form>
                                                 </div>
                                               </div>

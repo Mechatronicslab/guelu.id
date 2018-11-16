@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Redirect;
 use App\model\Categories;
 use App\model\Post;
+use App\model\User;
 use App\model\Administrator;
 use Session;
 
@@ -16,109 +17,74 @@ class HomeController extends Controller
 
     public function index()
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
+        $kategoris = Categories::all();
         $slideshow = Post::where('type', '4')->get();
         $berita = Post::where('type', '1')->get();
         $forum = Post::where('type', '2')->get();
         $vlog = Post::where('type', '3')->get();
-        $administrator_list = Administrator::all();
-        return view('index', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', 'kategori_list', 'administrator_list'));
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two = Post::latest()->where('type', '3')->get();
+        return view('index', compact('slideshow', 'side_one', 'side_two', 'berita', 'forum', 'vlog', 'kategoris'));
     }
 
     public function berita()
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->paginate(15);
-        $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->get();
-        $slideshow = Post::where('type', '4')->get();
-        $administrator_list = Administrator::all();
-        return view('berita', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', 'kategori_list', 'administrator_list'));
+        $kategoris = Categories::all();
+        $beritas = Post::where('type', '1')->paginate(15);
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('berita', compact('beritas', 'side_one', 'side_two', 'kategoris'));
     }
 
     public function vlog()
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->get();
-        $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->paginate(15);
-        $slideshow = Post::where('type', '4')->get();
-        $administrator_list = Administrator::all();
-        return view('vlog', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', 'kategori_list', 'administrator_list'));
+        $kategoris = Categories::all();
+        $vlogs = Post::where('type', '3')->paginate(15);
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('vlog', compact('vlogs', 'side_one', 'side_two', 'kategoris'));
     }
 
     public function forum()
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->get();
-        $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->get();
-        $slideshow = Post::where('type', '4')->get();
-        $administrator_list = Administrator::all();
-        return view('forum', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', 'kategori_list', 'administrator_list'));
+        $forums = Post::where('type', '2')->get();
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('forum', compact('side_one', 'side_two', 'forums'));
     }
 
     public function about()
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->get();
-        $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->get();
-        $slideshow = Post::where('type', '4')->get();
-        $administrator_list = Administrator::all();
-        return view('about', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', 'kategori_list', 'administrator_list'));
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('about', compact('side_one', 'side_two'));
     }
 
     public function contact()
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->get();
-        $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->get();
-        $slideshow = Post::where('type', '4')->get();
-        $administrator_list = Administrator::all();
-        return view('contact', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', 'kategori_list', 'administrator_list'));
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('contact', compact('side_one', 'side_two'));
     }
 
     public function post(Post $post)
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->get();
-        $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->get();
-        $slideshow = Post::where('type', '4')->get();
-        $administrator_list = Administrator::all();
-        return view('post', compact('post_list', 'slideshow', 'berita', 'forum', 'vlog', 'kategori_list', 'administrator_list'));
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('post', compact('side_one', 'side_two'));
     }
 
     public function show(Post $post)
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->get();
-        $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->get();
-        $slideshow = Post::where('type', '4')->get();
-        $administrator_list = Administrator::all();
-        return view('post', compact('post', 'post_list', 'berita', 'forum', 'vlog', 'slideshow', 'kategori_list', 'administrator_list'));
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('post', compact('side_one', 'side_two', 'post'));
     }
 
     public function vlogshow(Post $post)
     {
-        $post_list = Post::orderBy('id', 'DESC')->get();
-        $kategori_list = Categories::all();
-        $berita = Post::where('type', '1')->get();
-        $forum = Post::where('type', '2')->get();
-        $vlog = Post::where('type', '3')->get();
-        $slideshow = Post::where('type', '4')->get();
-        $administrator_list = Administrator::all();
-        return view('vlogs', compact('post', 'post_list', 'berita', 'forum', 'vlog', 'slideshow', 'kategori_list', 'administrator_list'));
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('vlogs', compact('side_one', 'side_two', 'post', 'post_list', 'berita', 'forum', 'vlog', 'slideshow', 'kategori_list', 'administrator_list'));
     }
 }

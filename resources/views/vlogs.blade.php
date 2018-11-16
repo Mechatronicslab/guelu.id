@@ -14,7 +14,7 @@
                             <div class="author_image">
                                 <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
                             </div>
-                            <div class="post_meta"><a href="#">{{ $post->administrator->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
+                            <div class="post_meta"><a href="#">{{ $post->user->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
                             </div>
                             <div class="post_share ml-sm-auto">
                                 <span>share</span>
@@ -47,7 +47,7 @@
                             <div class="author_image">
                                 <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
                             </div>
-                            <div class="post_meta"><a href="#">{{ $post->administrator->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
+                            <div class="post_meta"><a href="#">{{ $post->user->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
                             </div>
                             <div class="post_share ml-sm-auto">
                                 <span>share</span>
