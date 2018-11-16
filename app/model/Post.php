@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\model\Administrator;
 use App\model\User;
 use App\model\Categories;
+use App\model\Comment;
 
 class Post extends Model
 {
@@ -22,6 +23,10 @@ class Post extends Model
 
     public function categories(){
         return $this->belongsTo('App\model\Categories','categories_id','id');
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 
 }

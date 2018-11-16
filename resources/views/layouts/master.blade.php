@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-lg-10 order-lg-1 order-1">
                               <form action="#">
-                                  <input type="search" class="header_search_input" required="required" placeholder="Type to Search...">
+                                  <input type="search" class="header_search_input" required="required" placeholder="Type to Search...">                                  
                                   <img class="header_search_icon" src="{{URL::to('/')}}/images/search.png" alt="">
                               </form>
                             </div>

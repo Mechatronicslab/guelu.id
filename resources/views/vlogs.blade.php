@@ -64,85 +64,40 @@
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="post_comment_form_container">
-                                            <form action="#">
-                                                <input type="text" class="comment_input comment_input_name" placeholder="Your Name" required="required">
-                                                <input type="email" class="comment_input comment_input_email" placeholder="Your Email" required="required">
-                                                <textarea class="comment_text" placeholder="Your Comment" required="required"></textarea>
-                                                <button type="submit" class="comment_button">Post Comment</button>
-                                            </form>
+                                          <form action="{{ route('vlog.comment', $post) }}" method="post" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                              <textarea name="message" class="comment_text" placeholder="Your Comment" required="required"></textarea>
+                                              <button type="submit" class="comment_button">Post Comment</button>
+                                          </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="comments">
-                                <div class="comments_title">Comments <span>(12)</span></div>
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="comments_container">
                                             <ul class="comment_list">
-                                                <li class="comment">
-                                                    <div class="comment_body">
-                                                        <div class="comment_panel d-flex flex-row align-items-center justify-content-start">
-                                                            <div class="comment_author_image">
-                                                                <div>
-                                                                    <img src="{{URL::to('/')}}/images/comment_author_1.jpg" alt="">
-                                                                </div>
+                                              @foreach ($post->comments()->get() as $comment)
+                                              <li class="comment">
+                                                  <div class="comment_body">
+                                                      <div class="comment_panel d-flex flex-row align-items-center justify-content-start">
+                                                          <div class="comment_author_image">
+                                                            <div class="side_post_user">
+                                                                <div><img src="{{URL::to('/')}}/upload/profile/{{ $comment->user->photos }}" alt=""></div>
                                                             </div>
-                                                            <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span>
-                                                            </small>
-                                                            <button type="button" class="reply_button ml-auto">Reply
-                                                            </button>
-                                                        </div>
-                                                        <div class="comment_content">
-                                                            <p>Pick the yellow peach that looks like a sunset with its
-                                                                red, orange, and pink coat skin, peel it off with your
-                                                                teeth. Sink them into unripened.</p>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="comment_list">
-                                                        <li class="comment">
-                                                            <div class="comment_body">
-                                                                <div class="comment_panel d-flex flex-row align-items-center justify-content-start">
-                                                                    <div class="comment_author_image">
-                                                                        <div>
-                                                                            <img src="{{URL::to('/')}}/images/comment_author_2.jpg" alt=""></div>
-                                                                    </div>
-                                                                    <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-                                                                    <button type="button" class="reply_button ml-auto">Reply</button>
-                                                                </div>
-                                                                <div class="comment_content">
-                                                                    <p>Nulla facilisi. Aenean porttitor quis tortor id
-                                                                        tempus. Interdum et malesuada fames ac ante
-                                                                        ipsum primis in faucibus. Vivamus molestie
-                                                                        varius tincidunt. Vestibulum congue sed libero
-                                                                        ac sodales.</p>
-                                                                </div>
-                                                            </div>
-                                                            <ul class="comment_list">
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="comment">
-                                                    <div class="comment_body">
-                                                        <div class="comment_panel d-flex flex-row align-items-center justify-content-start">
-                                                            <div class="comment_author_image">
-                                                                <div>
-                                                                    <img src="{{URL::to('/')}}/images/comment_author_1.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span>
-                                                            </small>
-                                                            <button type="button" class="reply_button ml-auto">Reply
-                                                            </button>
-                                                        </div>
-                                                        <div class="comment_content">
-                                                            <p>Pick the yellow peach that looks like a sunset with its
-                                                                red, orange, and pink coat skin, peel it off with your
-                                                                teeth. Sink them into unripened.</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                          </div>
+                                                          <small class="post_meta"><a href="#">{{ $comment->user->full_name }}</a><span>{{ $comment->created_at->toDayDateTimeString() }}</span><span>{{ $comment->created_at->diffForHumans() }}</span>
+                                                          </small>
+                                                          <!-- <button type="button" class="reply_button ml-auto">Reply
+                                                          </button> -->
+                                                      </div>
+                                                      <div class="comment_content">
+                                                          <p>{{ $comment->message }}</p>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
