@@ -11,6 +11,7 @@ Route::get('/post/{post}', 'HomeController@show')->name('post.show');
 Route::post('/post/{post}', 'PostCommentController@comment')->name('post.comment');
 Route::get('/vlogs/{post}', 'HomeController@vlogshow')->name('vlog.show');
 Route::post('/vlogs/{post}', 'VlogCommentController@comment')->name('vlog.comment');
+Route::post('/contact/{post}', 'MessageController@message')->name('contact.message');
 Route::get('/register', 'UserController@register')->name('register');
 Route::post('/doRegister', 'UserController@doRegister')->name('doRegister');
 Route::get('/login', 'UserController@login')->name('login');

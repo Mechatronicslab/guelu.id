@@ -163,14 +163,16 @@
                             <div class="section_content">
                                 <div class="grid clearfix">
                                     <!-- Small Card With Background -->
+                                    @foreach ($legislatifs->slice(0, 12) as $legislatif)
                                     <div class="card card_default card_small_with_background grid-item">
                                         <div class="card_background" style="background-image:url(images/post_4.jpg)"></div>
                                         <div class="card-body">
-                                            <div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+                                            <div class="card-title card-title-small"><a href="post.html">{{ $legislatif->title }}</a></div>
                                             <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span>
                                             </small>
                                         </div>
                                     </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="load_more">

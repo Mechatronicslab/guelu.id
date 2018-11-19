@@ -82,6 +82,7 @@
                                                     <option name="type" value="2">Forum</option>
                                                     <option name="type" value="3">Video Blog</option>
                                                     <option name="type" value="4">Slideshow</option>
+                                                    <option name="type" value="5">Calon Legislatif</option>
                                                 </select>
                                             </div>
                                         </div>

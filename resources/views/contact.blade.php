@@ -25,10 +25,11 @@
                                             <!-- Post Comment -->
                                             <div class="post_comment">
                                                 <div class="contact_form_container">
-                                                    <form action="#">
-                                                        <input type="text" class="contact_input contact_input_name" placeholder="Your Name" required="required">
-                                                        <input type="email" class="contact_input contact_input_email" placeholder="Your Email" required="required">
-                                                        <textarea class="contact_text" placeholder="Your Message" required="required"></textarea>
+                                                    <form action="{{ route('contact.message', 'message') }}" method="post" enctype="multipart/form-data">
+                                                      {{ csrf_field() }}
+                                                        <input type="text" name="fullname" class="contact_input contact_input_name" placeholder="Your Name" required="required">
+                                                        <input type="email" name="email" class="contact_input contact_input_email" placeholder="Your Email" required="required">
+                                                        <textarea class="contact_text" name="messager" placeholder="Your Message" required="required"></textarea>
                                                         <button type="submit" class="contact_button">Send Message
                                                         </button>
                                                     </form>

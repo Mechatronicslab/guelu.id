@@ -70,7 +70,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">2986</span></div>
+                                    <div class="stat-text"><span class="count">{{ $countUser }}</span></div>
                                     <div class="stat-heading">Clients</div>
                                 </div>
                             </div>
@@ -93,23 +93,23 @@
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                     <tr>
-                                        <th class="avatar">Avatar</th>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Status</th>
+                                        <th>No</th>
+                                        <th>Nama Lengkap</th>
+                                        <th>Email</th>
+                                        <th>Pesan</th>
+                                        <th>Tanggal</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach ($message as $messager)
                                     <tr>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="{{URL::to('/')}}/images/avatar/1.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #5469</td>
-                                        <td><span class="name">Louis Stanley</span></td>
-                                        <td><span class="product">New Member</span></td>
+                                        <td>{{ $messager->id }}</td>
+                                        <td>{{ $messager->fullname }}</td>
+                                        <td><span class="name">{{ $messager->email }}</span></td>
+                                        <td><span class="product">{{ $messager->message }}</span></td>
+                                        <td>{{ $messager->created_at->formatLocalized('%a, %b %d %y') }}</td>
                                     </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -117,60 +117,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title box-title">Forum Update</h4>
-                        <div class="card-content">
-                            <div class="todo-list">
-                                <div class="tdl-holder">
-                                    <div class="tdl-content">
-                                        <ul>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"><i class="check-box"></i><span>Creating component page</span>
-                                                    <a href='#' class="fa fa-times"></a>
-                                                    <a href='#' class="fa fa-pencil"></a>
-                                                    <a href='#' class="fa fa-check"></a>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox" checked><i class="check-box"></i><span>Follow back those who follow you</span>
-                                                    <a href='#' class="fa fa-times"></a>
-                                                    <a href='#' class="fa fa-pencil"></a>
-                                                    <a href='#' class="fa fa-check"></a>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox" checked><i class="check-box"></i><span>Design One page theme</span>
-                                                    <a href='#' class="fa fa-times"></a>
-                                                    <a href='#' class="fa fa-pencil"></a>
-                                                    <a href='#' class="fa fa-check"></a>
-                                                </label>
-                                            </li>
-
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox" checked><i class="check-box"></i><span>Creating component page</span>
-                                                    <a href='#' class="fa fa-times"></a>
-                                                    <a href='#' class="fa fa-pencil"></a>
-                                                    <a href='#' class="fa fa-check"></a>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div>        
     </div>
 
 @endsection

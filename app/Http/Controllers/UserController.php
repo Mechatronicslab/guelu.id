@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\model\User;
 use App\model\Categories;
 use App\model\Post;
+use App\model\Message;
 use App\model\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,10 +29,12 @@ class UserController extends Controller
         $countNews = Post::where('type', '1')->count();
         $countForum = Post::where('type', '2')->count();
         $countVlog = Post::where('type', '3')->count();
+        $countUser = User::where('level', '1')->count();
+        $message = Message::all();
         if (!Session::get('login')) {
             return redirect('login')->with('alert', 'Kamu harus login dulu');
         } else {
-            return view('admin/index', compact('countNews', 'countVlog', 'countForum'));
+            return view('admin/index', compact('message', 'countNews', 'countVlog', 'countForum', 'countUser'));
         }
     }
 

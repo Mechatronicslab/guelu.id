@@ -15,11 +15,16 @@ use Illuminate\Support\Facades\Session;
 class PostCommentController extends Controller
 {
     public function comment(Request $request, Post $post){
+
+      if (!Session::get('login')) {
+          return redirect()->back()->with('alert', 'Kamu harus login dulu');
+      } else {
         $post->comments()->create(array_merge(
           $request->only('message'),
           ['user_id' => $request->session()->get('id')]
         ));
 
         return redirect()->back();
+      }
     }
 }

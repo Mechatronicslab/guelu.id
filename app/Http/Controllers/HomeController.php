@@ -18,13 +18,14 @@ class HomeController extends Controller
     public function index()
     {
         $kategoris = Categories::all();
-        $slideshow = Post::where('type', '4')->get();
         $berita = Post::where('type', '1')->get();
         $forum = Post::where('type', '2')->get();
         $vlog = Post::where('type', '3')->get();
+        $slideshow = Post::where('type', '4')->get();
+        $legislatifs = Post::where('type', '5')->get();
         $side_one = Post::latest()->where('type', '1')->get();
         $side_two = Post::latest()->where('type', '3')->get();
-        return view('index', compact('slideshow', 'side_one', 'side_two', 'berita', 'forum', 'vlog', 'kategoris'));
+        return view('index', compact('slideshow', 'side_one', 'side_two', 'berita', 'forum', 'vlog', 'legislatifs', 'kategoris'));
     }
 
     public function berita()
@@ -85,6 +86,6 @@ class HomeController extends Controller
     {
         $side_one = Post::latest()->where('type', '1')->get();
         $side_two= Post::latest()->where('type', '3')->get();
-        return view('vlogs', compact('side_one', 'side_two', 'post', 'post_list', 'berita', 'forum', 'vlog', 'slideshow', 'kategori_list', 'administrator_list'));
+        return view('vlogs', compact('side_one', 'side_two', 'post'));
     }
 }
