@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\model\Administrator;
 use App\model\User;
 use App\model\Categories;
-use App\model\Comment;
+use App\model\Comments_stories;
 
 class Stories extends Model
 {
@@ -22,6 +22,6 @@ class Stories extends Model
     }
 
     public function comments(){
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comments_stories::class);
     }
 }

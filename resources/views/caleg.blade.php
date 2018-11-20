@@ -12,7 +12,7 @@
                     <div class="post_content">
                         <div class="post_panel post_panel_top d-flex flex-row align-items-center justify-content-start">
                             <div class="author_image">
-                                <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
+                                <div><img src="{{URL::to('/')}}/upload/profile/{{ $post->user->photos }}" alt=""></div>
                             </div>
                             <div class="post_meta"><a href="#">{{ $post->user->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
                             </div>
@@ -45,7 +45,7 @@
 
                         <div class="post_panel bottom_panel d-flex flex-row align-items-center justify-content-start">
                             <div class="author_image">
-                                <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
+                                <div><img src="{{URL::to('/')}}/upload/profile/{{ $post->user->photos }}" alt=""></div>
                             </div>
                             <div class="post_meta"><a href="#">{{ $post->user->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
                             </div>
@@ -64,7 +64,7 @@
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="post_comment_form_container">
-                                          <form action="{{ route('vlog.comment', $post) }}" method="post" enctype="multipart/form-data">
+                                          <form action="{{ route('caleg.comment', $post) }}" method="post" enctype="multipart/form-data">
                                             {{ csrf_field() }}
                                               <textarea name="message" class="comment_text" placeholder="Your Comment" required="required"></textarea>
                                               <button type="submit" class="comment_button">Post Comment</button>

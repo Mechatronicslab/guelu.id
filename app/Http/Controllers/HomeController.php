@@ -107,6 +107,7 @@ class HomeController extends Controller
 
     public function all()
     {
+
         $cerita = Stories::all();
         $side_one = Post::latest()->where('type', '1')->get();
         $side_two= Post::latest()->where('type', '3')->get();

@@ -17,6 +17,8 @@ Route::post('/post/{post}', 'PostCommentController@comment')->name('post.comment
 Route::get('/vlogs/{post}', 'HomeController@vlogshow')->name('vlog.show');
 Route::get('/caleg/{post}', 'HomeController@calegshow')->name('caleg.show');
 Route::post('/vlogs/{post}', 'VlogCommentController@comment')->name('vlog.comment');
+Route::post('/caleg/{post}', 'VlogCommentController@calegcomment')->name('caleg.comment');
+Route::post('/forums/{stories}', 'StoriesCommentController@comment')->name('stories.comment');
 Route::post('/contact/{post}', 'MessageController@message')->name('contact.message');
 Route::get('/register', 'UserController@register')->name('register');
 Route::post('/doRegister', 'UserController@doRegister')->name('doRegister');
