@@ -117,7 +117,75 @@
                     </div>
                 </div>
             </div>
-        </div>        
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="box-title">Konfirmasi cerita baru </h4>
+                        </div>
+                        <div class="card-body--">
+                            <div class="table-stats order-table ov-h">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>title</th>
+                                        <th>author</th>
+                                        <th>Tanggal</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach ($ceritas as $cerita)
+                                    <?php if ($cerita->status == 1 ): ?>
+                                      <tr>
+                                          <td>{{ $cerita->id }}</td>
+                                          <td>{{ $cerita->title }}</td>
+                                          <td><span class="name">{{ $cerita->user->first_name }}</span></td>
+                                          <td><span class="product">{{ $cerita->created_at->formatLocalized('%a, %b %d %y') }}</span></td>
+                                          <td>
+                                            <form class="slime-icon" action="{{ route('admin.UpdateForum', $cerita) }}" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('patch') }}
+                                                <button type="submit" class="btn btn-link btn-sm"><i class="fa fa-check"></i></button>
+                                            </form>
+                                            <form class="slime-icon" action="{{ route('admin.DeleteForum', $cerita) }}" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('delete') }}
+                                                <button type="submit" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                          </td>
+                                      </tr>
+                                    <?php else: ?>
+                                      <tr hidden>
+                                          <td>{{ $cerita->id }}</td>
+                                          <td>{{ $cerita->title }}</td>
+                                          <td><span class="name">{{ $cerita->user->first_name }}</span></td>
+                                          <td><span class="product">{{ $cerita->created_at->formatLocalized('%a, %b %d %y') }}</span></td>
+                                          <td>
+                                            <form class="slime-icon" action="#" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('delete') }}
+                                                <button type="submit" class="btn btn-link btn-sm"><i class="fa fa-check"></i></button>
+                                            </form>
+                                            <form class="slime-icon" action="{{ route('admin.DeleteForum', $cerita) }}" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('delete') }}
+                                                <button type="submit" class="btn btn-link btn-sm"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                          </td>
+                                      </tr>
+                                    <?php endif; ?>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection

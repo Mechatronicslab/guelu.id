@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Redirect;
 use App\model\Categories;
 use App\model\Post;
+use App\model\Stories;
 use App\model\Administrator;
 use Image;
 
@@ -73,9 +74,26 @@ class PostController extends Controller
         return redirect()->route('admin.all');
     }
 
+    public function UpdateForum(Stories $stories)
+    {
+
+        $statuspost = 2;
+        $stories->update([
+            'status' => $statuspost,
+        ]);
+
+        return redirect()->back();
+    }
+
     public function DeletePost(Post $post)
     {
         $post->delete();
         return redirect()->route('admin.all');
+    }
+
+    public function DeleteForum(Stories $stories)
+    {
+        $stories->delete();
+        return redirect()->back();
     }
 }

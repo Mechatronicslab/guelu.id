@@ -2692,3 +2692,34 @@ label {
 {
 	color: rgba(0,0,0,0.8);
 }
+
+.title_stories{
+	font-size: 15px;
+	margin-left: 15px;
+	font-weight: bold;
+	color: teal;
+}
+
+.icon_status_draft{
+	background: #3f8ef5;
+	border-bottom-left-radius: 2px;
+	color: white;
+	width: auto;
+	padding: 4px 3px 5px 10px;
+	margin: 0px 0px 0px 0px;
+	border-bottom-right-radius: 2px;
+}
+
+.icon_status_published{
+	background: #3ff587;
+	border-bottom-left-radius: 2px;
+	color: white;
+	width: auto;
+	padding: 4px 3px 5px 10px;
+	margin: 0px 0px 0px 0px;
+	border-bottom-right-radius: 2px;
+}
+
+.icon_status_action{
+	color: #fff;
+}

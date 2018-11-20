@@ -15,7 +15,8 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin/index');
+        $post = Post::all();
+        return view('admin/index', compact('post'));
     }
 
 }

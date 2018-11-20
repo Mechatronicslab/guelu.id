@@ -10,6 +10,7 @@ use App\model\Categories;
 use App\model\Post;
 use App\model\Message;
 use App\model\Administrator;
+use App\model\Stories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Auth;
@@ -27,14 +28,15 @@ class UserController extends Controller
     public function index()
     {
         $countNews = Post::where('type', '1')->count();
-        $countForum = Post::where('type', '2')->count();
+        $countForum = Stories::all()->count();
         $countVlog = Post::where('type', '3')->count();
         $countUser = User::where('level', '1')->count();
         $message = Message::all();
+        $ceritas = Stories::all();
         if (!Session::get('login')) {
             return redirect('login')->with('alert', 'Kamu harus login dulu');
         } else {
-            return view('admin/index', compact('message', 'countNews', 'countVlog', 'countForum', 'countUser'));
+            return view('admin/index', compact('ceritas', 'message', 'countNews', 'countVlog', 'countForum', 'countUser'));
         }
     }
 

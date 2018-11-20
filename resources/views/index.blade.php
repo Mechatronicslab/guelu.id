@@ -93,7 +93,7 @@
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="{{ route('post.show', $beritas) }}">{{ $beritas->title }}</a>
                                                 </div>
-                                                <small class="post_meta"><a href="#">{{ $beritas->administrator->first_name }}</a><span>{{ $beritas->created_at->formatLocalized('%a, %b %d %y') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
+                                                <small class="post_meta"><a href="#">{{ $beritas->user->first_name }}</a><span>{{ $beritas->created_at->formatLocalized('%a, %b %d %y') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -115,7 +115,7 @@
                                             <div class="card-body">
                                                 <div class="card-title card-title-small"><a href="{{ route('vlog.show', $vlogs) }}">{{ $vlogs->title }}</a>
                                                 </div>
-                                                <small class="post_meta"><a href="#">{{ $vlogs->administrator->first_name }}</a><span>{{ $vlogs->created_at->formatLocalized('%a, %b %d %y') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
+                                                <small class="post_meta"><a href="#">{{ $vlogs->user->first_name }}</a><span>{{ $vlogs->created_at->formatLocalized('%a, %b %d %y') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -143,7 +143,7 @@
                                                         </div>
                                                         <div class="side_post_content">
                                                             <div class="side_post_title">{{ $forums->title }}</div>
-                                                            <small class="post_meta">{{ $forums->administrator->first_name }}
+                                                            <small class="post_meta">{{ $forums->user->first_name }}
                                                                 <span>{{ $forums->created_at->formatLocalized('%a, %b %d') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
                                                             </small>
                                                         </div>
@@ -165,10 +165,10 @@
                                     <!-- Small Card With Background -->
                                     @foreach ($legislatifs->slice(0, 12) as $legislatif)
                                     <div class="card card_default card_small_with_background grid-item">
-                                        <div class="card_background" style="background-image:url(images/post_4.jpg)"></div>
+                                        <div class="card_background" style="background-image:url(/upload/posts/{{ $vlogs->thumbnails }})"></div>
                                         <div class="card-body">
-                                            <div class="card-title card-title-small"><a href="post.html">{{ $legislatif->title }}</a></div>
-                                            <small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span>
+                                            <div class="card-title card-title-small"><a href="{{ route('caleg.show', $legislatif) }}">{{ $legislatif->title }}</a></div>
+                                            <small class="post_meta"><a href="#">{{ $legislatif->user->first_name }}</a><span>{{ $vlogs->created_at->formatLocalized('%a, %b %d %y') }}</span><span>{{ $beritas->created_at->diffForHumans() }}</span>
                                             </small>
                                         </div>
                                     </div>

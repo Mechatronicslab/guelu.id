@@ -12,7 +12,7 @@
                     <div class="post_content">
                         <div class="post_panel post_panel_top d-flex flex-row align-items-center justify-content-start">
                             <div class="author_image">
-                                <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
+                                <div><img src="{{URL::to('/')}}/upload/profile/{{ $post->user->photos }}" alt=""></div>
                             </div>
                             <div class="post_meta"><a href="#">{{ $post->user->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
                             </div>
@@ -45,7 +45,7 @@
 
                         <div class="post_panel bottom_panel d-flex flex-row align-items-center justify-content-start">
                             <div class="author_image">
-                                <div><img src="{{URL::to('/')}}/images/author.jpg" alt=""></div>
+                                <div><img src="{{URL::to('/')}}/upload/profile/{{ $post->user->photos }}" alt=""></div>
                             </div>
                             <div class="post_meta"><a href="#">{{ $post->user->first_name }}</a><span>{{ $post->created_at->toDayDateTimeString() }}</span>
                             </div>

@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\UserController;
 use App\model\Categories;
 use App\model\Post;
 use App\model\User;
+use App\model\Stories;
 use App\model\Administrator;
 use Session;
 
@@ -19,7 +21,7 @@ class HomeController extends Controller
     {
         $kategoris = Categories::all();
         $berita = Post::where('type', '1')->get();
-        $forum = Post::where('type', '2')->get();
+        $forum = Stories::where('status', '2')->get();
         $vlog = Post::where('type', '3')->get();
         $slideshow = Post::where('type', '4')->get();
         $legislatifs = Post::where('type', '5')->get();
@@ -48,7 +50,7 @@ class HomeController extends Controller
 
     public function forum()
     {
-        $forums = Post::where('type', '2')->get();
+        $forums = Stories::where('status', '2')->get();
         $side_one = Post::latest()->where('type', '1')->get();
         $side_two= Post::latest()->where('type', '3')->get();
         return view('forum', compact('side_one', 'side_two', 'forums'));
@@ -87,5 +89,54 @@ class HomeController extends Controller
         $side_one = Post::latest()->where('type', '1')->get();
         $side_two= Post::latest()->where('type', '3')->get();
         return view('vlogs', compact('side_one', 'side_two', 'post'));
+    }
+
+    public function calegshow(Post $post)
+    {
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('caleg', compact('side_one', 'side_two', 'post'));
+    }
+
+    public function stories(Post $post)
+    {
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('stories', compact('side_one', 'side_two', 'post'));
+    }
+
+    public function all()
+    {
+        $cerita = Stories::all();
+        $side_one = Post::latest()->where('type', '1')->get();
+        $side_two= Post::latest()->where('type', '3')->get();
+        return view('all', compact('side_one', 'side_two', 'cerita'));
+    }
+
+    public function storiesinsert(Request $request)
+    {
+      $statuspost = '1';
+
+      $data = new Stories();
+      $data->title = $request->title;
+      $data->slug = str_slug($request->title);
+      $data->content = $request->content;
+      $data->author = $request->session()->get('id');
+      $data->status = $statuspost;
+      $data->save();
+
+      return redirect('all')->with('alert-success', 'Kamu berhasil membuat cerita baru');
+    }
+
+    public function storiesdelete(Stories $stories){
+
+      $stories->delete();
+      return redirect()->back();
+    }
+
+    public function storiesshow(Stories $stories){
+      $side_one = Post::latest()->where('type', '1')->get();
+      $side_two= Post::latest()->where('type', '3')->get();
+      return view('forums', compact('side_one', 'side_two', 'stories'));
     }
 }

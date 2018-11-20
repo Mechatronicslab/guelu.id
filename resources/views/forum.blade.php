@@ -25,7 +25,7 @@
                                             <!-- Future Events Post -->
                                             @foreach ($forums->slice(0, 12) as $forum)
                                             <div class="side_post">
-                                                <a href="/post">
+                                                <a href="{{ route('stories.show', $forum) }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                                         <div class="event_date d-flex flex-column align-items-center justify-content-center">
                                                             <div class="event_day">{{ $forum->created_at->formatLocalized('%d') }}</div>
