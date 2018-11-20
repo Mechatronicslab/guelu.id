@@ -78,8 +78,7 @@
                                             <div class="input-group">
                                                 <select data-placeholder="Pilihan konten..." name="type" class="standardSelect" tabindex="1">
                                                     <option value="" label="default"></option>
-                                                    <option name="type" value="1">Berita</option>
-                                                    <option name="type" value="2">Forum</option>
+                                                    <option name="type" value="1">Berita</option>                                                    
                                                     <option name="type" value="3">Video Blog</option>
                                                     <option name="type" value="4">Slideshow</option>
                                                     <option name="type" value="5">Calon Legislatif</option>
