@@ -135,7 +135,7 @@
                                         <!-- Future Events Post -->
                                         @foreach ($forum->slice(0, 12) as $forums)
                                             <div class="side_post">
-                                                <a href="post.html">
+                                                <a href="{{ route('stories.show', $forums) }}">
                                                     <div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
                                                         <div class="event_date d-flex flex-column align-items-center justify-content-center">
                                                             <div class="event_day">{{ $forums->created_at->formatLocalized('%d') }}</div>
